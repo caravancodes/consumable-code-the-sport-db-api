@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.model.response
+package com.frogobox.frogothesportdbapi.response
 
-import com.frogobox.frogothesportdbapi.model.data.Sport
+import com.frogobox.frogothesportdbapi.model.League
 
 /**
  * Created by Faisal Amir
@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.model.data.Sport
  * com.frogobox.frogothesportdbapi.model.response
  *
  */
-data class Sports(val sports: List<Sport>)
+data class Leagues(val leagues: List<League>)

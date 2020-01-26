@@ -1,4 +1,4 @@
-package com.frogobox.frogothesportdbapi.model.data
+package com.frogobox.frogothesportdbapi.model
 
 import com.frogobox.frogothesportdbapi.util.ConstDataApi.Country.DATE_FIRST_EVENT
 import com.frogobox.frogothesportdbapi.util.ConstDataApi.Country.ID_API_FOOTBALL

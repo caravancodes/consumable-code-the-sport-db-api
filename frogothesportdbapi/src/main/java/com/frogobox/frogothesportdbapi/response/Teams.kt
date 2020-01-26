@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.model.response
+package com.frogobox.frogothesportdbapi.response
 
-import com.frogobox.frogothesportdbapi.model.data.League
+import com.frogobox.frogothesportdbapi.model.Team
 
 /**
  * Created by Faisal Amir
@@ -16,7 +16,7 @@ import com.frogobox.frogothesportdbapi.model.data.League
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.response
+ * com.frogobox.frogothesportdbapi.response
  *
  */
-data class Leagues(val leagues: List<League>)
+data class Teams(val teams: List<Team>)

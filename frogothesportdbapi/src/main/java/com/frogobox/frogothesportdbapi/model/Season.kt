@@ -1,6 +1,7 @@
-package com.frogobox.frogothesportdbapi.model.response
+package com.frogobox.frogothesportdbapi.model
 
-import com.frogobox.frogothesportdbapi.model.data.Country
+import com.frogobox.frogothesportdbapi.util.ConstDataApi.Season.STR_SEASON
+import com.google.gson.annotations.SerializedName
 
 /**
  * Created by Faisal Amir
@@ -16,7 +17,12 @@ import com.frogobox.frogothesportdbapi.model.data.Country
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.response
+ * com.frogobox.frogothesportdbapi.model.data
  *
  */
-data class Countrys(val countrys: List<Country>)
+data class Season(
+
+    @SerializedName(STR_SEASON)
+    var strSeason: String? = null
+
+)

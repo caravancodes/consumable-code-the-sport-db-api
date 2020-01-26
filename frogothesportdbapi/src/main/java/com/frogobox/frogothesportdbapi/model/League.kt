@@ -1,4 +1,4 @@
-package com.frogobox.frogothesportdbapi.model.data
+package com.frogobox.frogothesportdbapi.model
 
 import com.frogobox.frogothesportdbapi.util.ConstDataApi.League.ID_LEAGUE
 import com.frogobox.frogothesportdbapi.util.ConstDataApi.League.STR_LEAGUE
