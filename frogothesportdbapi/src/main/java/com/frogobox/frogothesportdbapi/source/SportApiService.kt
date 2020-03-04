@@ -3,7 +3,7 @@ package com.frogobox.frogothesportdbapi.source
 import com.frogobox.frogothesportdbapi.BaseSportApplication
 import com.frogobox.frogothesportdbapi.BuildConfig
 import com.frogobox.frogothesportdbapi.response.Teams
-import com.frogobox.frogothesportdbapi.util.Helper
+import com.frogobox.frogothesportdbapi.util.SportHelper
 import io.reactivex.Observable
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -64,7 +64,7 @@ interface SportApiService {
                     *  the device is connected to Internet or not.
                     */
                         request =
-                            if (Helper.Func.isNetworkAvailable(BaseSportApplication.getContext())!!)
+                            if (SportHelper.Func.isNetworkAvailable(BaseSportApplication.getContext())!!)
                             /*
                         *  If there is Internet, get the cache that was stored 5 seconds ago.
                         *  If the cache is older than 5 seconds, then discard it,
@@ -103,7 +103,7 @@ interface SportApiService {
                     .addInterceptor { chain ->
                         var request = chain.request()
                         request =
-                            if (Helper.Func.isNetworkAvailable(BaseSportApplication.getContext())!!)
+                            if (SportHelper.Func.isNetworkAvailable(BaseSportApplication.getContext())!!)
                                 request.newBuilder().header(
                                     "Cache-Control",
                                     "public, max-age=" + 5

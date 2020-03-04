@@ -1,6 +1,8 @@
 package com.frogobox.frogothesportdbapi.source
 
 import com.frogobox.frogothesportdbapi.response.Teams
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by Faisal Amir
@@ -25,7 +27,25 @@ object SportRemoteDataSource : SportDataSource {
         league: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        SportApiService.getApiService
+            .searchTeamByLeague(apiKey, league)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Teams>() {
+
+                override fun onSuccess(model: Teams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                    callback.onFinish()
+                }
+
+            })
     }
 
 }

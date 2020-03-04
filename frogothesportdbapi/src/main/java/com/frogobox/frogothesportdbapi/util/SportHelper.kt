@@ -25,10 +25,10 @@ import java.util.*
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.base.util
+ * com.frogobox.frogothesportdbapi.util
  *
  */
-class Helper {
+class SportHelper {
 
     object Func {
 

@@ -1,4 +1,8 @@
-package com.frogobox.frogothesportdbapi
+package com.frogobox.frogothesportdbapi.util
+
+
+import com.frogobox.frogothesportdbapi.source.SportRemoteDataSource
+import com.frogobox.frogothesportdbapi.source.SportRepository
 
 /**
  * Created by Faisal Amir
@@ -14,14 +18,13 @@ package com.frogobox.frogothesportdbapi
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.base
+ * com.frogobox.frogothesportdbapi.util
  *
  */
-interface BaseDataSource {
-    interface ResponseCallback<T> {
-        fun onSuccess(data: T)
-        fun onFinish()
-        fun onEmpty()
-        fun onFailed(statusCode: Int, errorMessage: String? = "")
+object SportInjection {
+
+    fun provideRepository(): SportRepository {
+        return SportRepository.getInstance(SportRemoteDataSource)
     }
+
 }

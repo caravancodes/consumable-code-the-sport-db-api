@@ -1,6 +1,6 @@
 package com.frogobox.frogothesportdbapi.source
 
-import com.frogobox.frogothesportdbapi.BaseDataSource
+import com.frogobox.frogothesportdbapi.BaseSportDataSource
 import com.frogobox.frogothesportdbapi.response.Teams
 
 /**
@@ -24,6 +24,6 @@ interface SportDataSource {
 
     fun searchTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
 
-    interface GetRemoteCallback<T> : BaseDataSource.ResponseCallback<T>
+    interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
 
 }

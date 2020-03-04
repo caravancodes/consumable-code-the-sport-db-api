@@ -21,7 +21,7 @@ import java.util.*
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.base
+ * com.frogobox.frogothesportdbapi
  *
  */
 class BaseSportApplication : Application() {

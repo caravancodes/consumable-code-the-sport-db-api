@@ -1,14 +1,13 @@
-package com.frogobox.frogothesportdbapi.model
+package com.frogobox.frogothesportdbapi
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Season.STR_SEASON
 import com.google.gson.annotations.SerializedName
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
- * TheSportDBApi
- * Copyright (C) 26/01/2020.
+ * mvvm
+ * Copyright (C) 16/11/2019.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -17,12 +16,17 @@ import com.google.gson.annotations.SerializedName
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.data
+ * com.frogobox.frogothesportdbapi
  *
  */
-data class Season(
+data class BaseSportApiModel<T>(
+    @SerializedName("code") val code: Int,
+    @SerializedName("message") val message: String,
+    @SerializedName("data") val data: T? = null,
 
-    @SerializedName(STR_SEASON)
-    var strSeason: String? = null
-
+    // Remove code below if project is running
+    var page: Int,
+    var total_results: Int,
+    var total_pages: Int,
+    var results: T? = null
 )
