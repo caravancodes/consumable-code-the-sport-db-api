@@ -1,4 +1,4 @@
-package com.frogobox.frogothesportdbapi.source
+package com.frogobox.frogothesportdbapi.data.source
 
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable

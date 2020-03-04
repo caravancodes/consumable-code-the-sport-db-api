@@ -1,9 +1,10 @@
 package com.frogobox.frogothesportdbapi
 
-import com.frogobox.frogothesportdbapi.response.Teams
-import com.frogobox.frogothesportdbapi.source.SportDataSource
-import com.frogobox.frogothesportdbapi.source.SportRemoteDataSource
-import com.frogobox.frogothesportdbapi.source.SportRepository
+import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.source.SportDataSource
+import com.frogobox.frogothesportdbapi.data.source.SportRemoteDataSource
+import com.frogobox.frogothesportdbapi.data.source.SportRepository
 
 /**
  * Created by Faisal Amir
@@ -26,21 +27,20 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
     private val sportRepository = SportRepository(SportRemoteDataSource)
 
-    override fun searchTeams(league: String) {
+    override fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>) {
 
         sportRepository.searchTeamByLeague(
             apiKey,
             league,
             object : SportDataSource.GetRemoteCallback<Teams> {
                 override fun onSuccess(data: Teams) {
-
+                    sportResultCallback.getResultData(data)
                 }
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
-
+                    sportResultCallback.failedResult(statusCode, errorMessage)
                 }
             })
     }
-
 
 }

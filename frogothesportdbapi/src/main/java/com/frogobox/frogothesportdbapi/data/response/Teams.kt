@@ -1,7 +1,6 @@
-package com.frogobox.frogothesportdbapi.model
+package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Season.STR_SEASON
-import com.google.gson.annotations.SerializedName
+import com.frogobox.frogothesportdbapi.data.model.Team
 
 /**
  * Created by Faisal Amir
@@ -17,12 +16,7 @@ import com.google.gson.annotations.SerializedName
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.data
+ * com.frogobox.frogothesportdbapi.response
  *
  */
-data class Season(
-
-    @SerializedName(STR_SEASON)
-    var strSeason: String? = null
-
-)
+data class Teams(val teams: List<Team>)

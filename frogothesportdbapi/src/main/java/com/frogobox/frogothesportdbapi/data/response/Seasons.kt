@@ -1,7 +1,6 @@
-package com.frogobox.frogothesportdbapi.source
+package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
-import com.frogobox.frogothesportdbapi.response.Teams
+import com.frogobox.frogothesportdbapi.data.model.Season
 
 /**
  * Created by Faisal Amir
@@ -17,13 +16,8 @@ import com.frogobox.frogothesportdbapi.response.Teams
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.source
+ * com.frogobox.frogothesportdbapi.model.response
  *
  */
-interface SportDataSource {
 
-    fun searchTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
-
-    interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
-
-}
+data class Seasons(val seasons: List<Season>)

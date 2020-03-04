@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.source
+package com.frogobox.frogothesportdbapi.data.source
 
-import com.frogobox.frogothesportdbapi.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.Teams
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -22,7 +22,8 @@ import io.reactivex.schedulers.Schedulers
  * com.frogobox.frogothesportdbapi.source
  *
  */
-object SportRemoteDataSource : SportDataSource {
+object SportRemoteDataSource :
+    SportDataSource {
     override fun searchTeamByLeague(
         apiKey: String,
         league: String,

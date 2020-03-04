@@ -1,14 +1,14 @@
-package com.frogobox.frogothesportdbapi
+package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.callback.SportResultCallback
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Season.STR_SEASON
+import com.google.gson.annotations.SerializedName
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
  * TheSportDBApi
- * Copyright (C) 04/03/2020.
+ * Copyright (C) 26/01/2020.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -17,11 +17,12 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.util
+ * com.frogobox.frogothesportdbapi.model.data
  *
  */
-interface ConsumeTheSportDbApiView {
+data class Season(
 
-    fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>)
+    @SerializedName(STR_SEASON)
+    var strSeason: String? = null
 
-}
+)

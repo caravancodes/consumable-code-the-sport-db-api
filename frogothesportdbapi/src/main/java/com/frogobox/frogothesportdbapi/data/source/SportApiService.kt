@@ -1,7 +1,7 @@
-package com.frogobox.frogothesportdbapi.source
+package com.frogobox.frogothesportdbapi.data.source
 
 import com.frogobox.frogothesportdbapi.BuildConfig
-import com.frogobox.frogothesportdbapi.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.Teams
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

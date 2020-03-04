@@ -1,4 +1,4 @@
-package com.frogobox.frogothesportdbapi.model
+package com.frogobox.frogothesportdbapi.data.model
 
 import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.ID_SPORT
 import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.STR_FORMAT

@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.source
+package com.frogobox.frogothesportdbapi.data.source
 
-import com.frogobox.frogothesportdbapi.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.Teams
 
 /**
  * Created by Faisal Amir
@@ -19,12 +19,17 @@ import com.frogobox.frogothesportdbapi.response.Teams
  * com.frogobox.frogothesportdbapi.source
  *
  */
-open class SportRepository(private val remoteDataSource: SportRemoteDataSource) : SportDataSource{
+open class SportRepository(private val remoteDataSource: SportRemoteDataSource) :
+    SportDataSource {
     override fun searchTeamByLeague(
         apiKey: String,
         league: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        remoteDataSource.searchTeamByLeague(apiKey, league, callback)
+        SportRemoteDataSource.searchTeamByLeague(
+            apiKey,
+            league,
+            callback
+        )
     }
 }

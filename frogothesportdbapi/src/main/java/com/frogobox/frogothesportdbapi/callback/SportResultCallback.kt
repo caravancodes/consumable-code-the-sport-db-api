@@ -1,13 +1,11 @@
-package com.frogobox.frogothesportdbapi.response
-
-import com.frogobox.frogothesportdbapi.model.League
+package com.frogobox.frogothesportdbapi.callback
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
  * TheSportDBApi
- * Copyright (C) 26/01/2020.
+ * Copyright (C) 05/03/2020.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -16,7 +14,12 @@ import com.frogobox.frogothesportdbapi.model.League
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.response
+ * com.frogobox.frogothesportdbapi.callback
  *
  */
-data class Leagues(val leagues: List<League>)
+interface SportResultCallback<T> {
+
+    fun getResultData(data: T)
+    fun failedResult(statusCode: Int, errorMessage: String?)
+
+}

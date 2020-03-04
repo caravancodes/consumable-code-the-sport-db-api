@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.response
+package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.model.Season
+import com.frogobox.frogothesportdbapi.data.model.Sport
 
 /**
  * Created by Faisal Amir
@@ -19,5 +19,4 @@ import com.frogobox.frogothesportdbapi.model.Season
  * com.frogobox.frogothesportdbapi.model.response
  *
  */
-
-data class Seasons(val seasons: List<Season>)
+data class Sports(val sports: List<Sport>)

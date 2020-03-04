@@ -1,13 +1,10 @@
 package com.frogobox.thesportdbapi
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.frogothesportdbapi.ConsumeTheSportDbApi
-import com.frogobox.frogothesportdbapi.response.Teams
-import com.frogobox.frogothesportdbapi.source.SportDataSource
-import com.frogobox.frogothesportdbapi.source.SportRemoteDataSource
-import com.frogobox.frogothesportdbapi.source.SportRepository
+import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Teams
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,15 +13,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val consumeTheSportDbApi = ConsumeTheSportDbApi("1")
-        val searchTeams = consumeTheSportDbApi.searchTeams("English Premier League")
-//
-//        for (i in searchTeams.teams.indices) {
-//            println(searchTeams.teams[i].strTeam)
-//        }
+        consumeTheSportDbApi.searchTeams(
+            "English Premier League",
+            object : SportResultCallback<Teams> {
+                override fun getResultData(data: Teams) {
+                    for (i in data.teams.indices) {
+                        println(data.teams[i].strTeam)
+                    }
+                }
+
+                override fun failedResult(statusCode: Int, errorMessage: String?) {}
+
+            })
 
     }
-
-
 
 
 }

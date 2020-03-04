@@ -1,6 +1,6 @@
-package com.frogobox.frogothesportdbapi.response
+package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.model.Team
+import com.frogobox.frogothesportdbapi.data.model.Country
 
 /**
  * Created by Faisal Amir
@@ -16,7 +16,7 @@ import com.frogobox.frogothesportdbapi.model.Team
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.response
+ * com.frogobox.frogothesportdbapi.model.response
  *
  */
-data class Teams(val teams: List<Team>)
+data class Countrys(val countrys: List<Country>)
