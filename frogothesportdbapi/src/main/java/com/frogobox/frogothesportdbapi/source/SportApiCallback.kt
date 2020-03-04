@@ -1,7 +1,5 @@
 package com.frogobox.frogothesportdbapi.source
 
-import com.frogobox.frogothesportdbapi.BaseSportApiModel
-import com.google.gson.Gson
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import retrofit2.HttpException
@@ -22,7 +20,7 @@ import java.net.UnknownHostException
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.modular.source.remote
+ * com.frogobox.base.modular.source.remote
  *
  */
 abstract class SportApiCallback<M> : Observer<M> {
@@ -49,36 +47,26 @@ abstract class SportApiCallback<M> : Observer<M> {
         e.printStackTrace()
         when (e) {
             is HttpException -> {
-                val code = e.code()
-                var msg = e.message()
+
+
                 var baseDao: M? = null
                 try {
                     val body = e.response()?.errorBody()
-                    baseDao = Gson().fromJson<M>(body!!.string(), BaseSportApiModel::class.java)
                 } catch (exception: Exception) {
-                    onFailure(code, exception.message!!)
+                    onFailure(504, exception.message!!)
                 }
 
-                when (code) {
-//                    504 -> {
-//                        msg = baseDao?.message ?: "Error Response"
-//                    }
-//                    502, 404 -> {
-//                        msg = baseDao?.message ?: "Error Connect or Resource Not Found"
-//                    }
-//                    400 -> {
-//                        msg = baseDao?.message ?: "Bad Request"
-//                    }
-//                    401 -> {
-//                        msg = baseDao?.message ?: "Not Authorized"
-//                    }
-                }
-
-                onFailure(code, msg)
+                onFailure(504, "Error Response")
             }
 
-            is UnknownHostException -> onFailure(-1, "Telah terjadi kesalahan ketika koneksi ke server: ${e.message}")
-            is SocketTimeoutException -> onFailure(-1, "Telah terjadi kesalahan ketika koneksi ke server: ${e.message}")
+            is UnknownHostException -> onFailure(
+                -1,
+                "Telah terjadi kesalahan ketika koneksi ke server: ${e.message}"
+            )
+            is SocketTimeoutException -> onFailure(
+                -1,
+                "Telah terjadi kesalahan ketika koneksi ke server: ${e.message}"
+            )
             else -> onFailure(-1, e.message ?: "Unknown error occured")
         }
 

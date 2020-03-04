@@ -1,6 +1,6 @@
 package com.frogobox.frogothesportdbapi.source
 
-import com.frogobox.frogothesportdbapi.BaseSportDataSource
+import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
 import com.frogobox.frogothesportdbapi.response.Teams
 
 /**

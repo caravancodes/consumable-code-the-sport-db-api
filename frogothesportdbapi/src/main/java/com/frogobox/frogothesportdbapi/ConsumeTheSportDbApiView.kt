@@ -1,15 +1,13 @@
-package com.frogobox.frogothesportdbapi.util
+package com.frogobox.frogothesportdbapi
 
-
-import com.frogobox.frogothesportdbapi.source.SportRemoteDataSource
-import com.frogobox.frogothesportdbapi.source.SportRepository
+import com.frogobox.frogothesportdbapi.response.Teams
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
- * mvvm
- * Copyright (C) 16/11/2019.
+ * TheSportDBApi
+ * Copyright (C) 04/03/2020.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -21,10 +19,8 @@ import com.frogobox.frogothesportdbapi.source.SportRepository
  * com.frogobox.frogothesportdbapi.util
  *
  */
-object SportInjection {
+interface ConsumeTheSportDbApiView {
 
-    fun provideRepository(): SportRepository {
-        return SportRepository.getInstance(SportRemoteDataSource)
-    }
+    fun searchTeams(league: String)
 
 }

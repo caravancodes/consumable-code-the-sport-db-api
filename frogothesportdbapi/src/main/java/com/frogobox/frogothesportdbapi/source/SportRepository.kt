@@ -27,35 +27,4 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
     ) {
         remoteDataSource.searchTeamByLeague(apiKey, league, callback)
     }
-
-    companion object {
-
-        private var INSTANCE: SportRepository? = null
-
-        /**
-         * Returns the single instance of this class, creating it if necessary.
-
-         * @param RemoteDataSource backend data source
-         * *
-         * @return the [Repository] instance
-         */
-        @JvmStatic
-        fun getInstance(remoteDataSource: SportRemoteDataSource) =
-            INSTANCE
-                ?: synchronized(SportRepository::class.java) {
-                    INSTANCE
-                        ?: SportRepository(remoteDataSource)
-                            .also { INSTANCE = it }
-                }
-
-        /**
-         * Used to force [getInstance] to create a new instance
-         * next time it's called.
-         */
-        @JvmStatic
-        fun destroyInstance() {
-            INSTANCE = null
-        }
-    }
-
 }

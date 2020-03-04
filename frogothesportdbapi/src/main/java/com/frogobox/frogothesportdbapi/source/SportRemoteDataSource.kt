@@ -4,6 +4,7 @@ import com.frogobox.frogothesportdbapi.response.Teams
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
+
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
@@ -32,7 +33,6 @@ object SportRemoteDataSource : SportDataSource {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SportApiCallback<Teams>() {
-
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
                 }
@@ -42,9 +42,7 @@ object SportRemoteDataSource : SportDataSource {
                 }
 
                 override fun onFinish() {
-                    callback.onFinish()
                 }
-
             })
     }
 
