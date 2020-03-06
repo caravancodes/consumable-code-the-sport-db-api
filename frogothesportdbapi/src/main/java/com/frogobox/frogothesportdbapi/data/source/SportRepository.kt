@@ -1,9 +1,7 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 
 /**
  * Created by Faisal Amir
@@ -98,6 +96,42 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         remoteDataSource.searchForEventFileName(apiKey, eventFileName, callback)
+    }
+
+    override fun getAllSports(apiKey: String, callback: SportDataSource.GetRemoteCallback<Sports>) {
+        remoteDataSource.getAllSports(apiKey, callback)
+    }
+
+    override fun getAllLeagues(
+        apiKey: String,
+        callback: SportDataSource.GetRemoteCallback<Leagues>
+    ) {
+        remoteDataSource.getAllLeagues(apiKey, callback)
+    }
+
+    override fun searchAllLeagues(
+        apiKey: String,
+        countryName: String,
+        callback: SportDataSource.GetRemoteCallback<Countrys>
+    ) {
+        remoteDataSource.searchAllLeagues(apiKey, countryName, callback)
+    }
+
+    override fun searchAllLeagues(
+        apiKey: String,
+        countryName: String,
+        sportName: String,
+        callback: SportDataSource.GetRemoteCallback<Countrys>
+    ) {
+        remoteDataSource.searchAllLeagues(apiKey, countryName, sportName, callback)
+    }
+
+    override fun searchAllSeasons(
+        apiKey: String,
+        idTeam: String,
+        callback: SportDataSource.GetRemoteCallback<Seasons>
+    ) {
+        remoteDataSource.searchAllSeasons(apiKey, idTeam, callback)
     }
 
     override fun searchAllTeamByLeague(

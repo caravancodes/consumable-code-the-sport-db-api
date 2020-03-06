@@ -2,9 +2,7 @@ package com.frogobox.frogothesportdbapi
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 
 /**
  * Created by Faisal Amir
@@ -51,6 +49,22 @@ interface ConsumeTheSportDbApiView {
 
     // Search for event by event file name
     fun searchForEventFileName(eventFileName: String, sportResultCallback: SportResultCallback<Events>)
+
+
+    // List all sports
+    fun getAllSports(sportResultCallback: SportResultCallback<Sports>)
+
+    // List all leagues
+    fun getAllLeagues(sportResultCallback: SportResultCallback<Leagues>)
+
+    // List all Leagues in a country
+    fun searchAllLeagues(countryName: String, sportResultCallback: SportResultCallback<Countrys>)
+
+    // List all Leagues in a country specific by sport
+    fun searchAllLeagues(countryName: String, sportName: String, sportResultCallback: SportResultCallback<Countrys>)
+
+    // List all Seasons in a League
+    fun searchAllSeasons(idTeam: String, sportResultCallback: SportResultCallback<Seasons>)
 
     // List all Teams in a League
     fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)

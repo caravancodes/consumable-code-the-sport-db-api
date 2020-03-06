@@ -2,9 +2,7 @@ package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 
 /**
  * Created by Faisal Amir
@@ -51,6 +49,21 @@ interface SportDataSource {
 
     // Search for event by event file name
     fun searchForEventFileName(apiKey: String, eventFileName: String, callback: GetRemoteCallback<Events>)
+
+    // List all sports
+    fun getAllSports(apiKey: String, callback: GetRemoteCallback<Sports>)
+
+    // List all leagues
+    fun getAllLeagues(apiKey: String, callback: GetRemoteCallback<Leagues>)
+
+    // List all Leagues in a country
+    fun searchAllLeagues(apiKey: String, countryName: String, callback: GetRemoteCallback<Countrys>)
+
+    // List all Leagues in a country specific by sport
+    fun searchAllLeagues(apiKey: String, countryName: String, sportName: String, callback: GetRemoteCallback<Countrys>)
+
+    // List all Seasons in a League
+    fun searchAllSeasons(apiKey: String, idTeam: String, callback: GetRemoteCallback<Seasons>)
 
     // List all Teams in a League
     fun searchAllTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)

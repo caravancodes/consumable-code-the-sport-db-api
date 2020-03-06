@@ -2,9 +2,7 @@ package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.BuildConfig
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 import com.readystatesoftware.chuck.ChuckInterceptor
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
@@ -94,6 +92,40 @@ interface SportApiService {
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_EVENT_NAME) eventFileName: String
     ): Observable<Events>
+
+    // List all sports
+    @GET(BuildConfig.SPORTDB_URL_GET_ALL_SPORTS)
+    fun getAllSports(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String
+    ): Observable<Sports>
+
+    // List all leagues
+    @GET(BuildConfig.SPORTDB_URL_GET_ALL_LEAGUES)
+    fun getAllLeagues(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String
+    ): Observable<Leagues>
+
+    // List all Leagues in a country
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_LEAGUES)
+    fun searchAllLeagues(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String
+    ): Observable<Countrys>
+
+    // List all Leagues in a country specific by sport
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_LEAGUES)
+    fun searchAllLeagues(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String,
+        @Query(BuildConfig.QUERY_SPORT_NAME) sportName: String
+    ): Observable<Countrys>
+
+    // List all Seasons in a League
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_SEASONS)
+    fun searchAllSeasons(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idTeam: String
+    ): Observable<Seasons>
 
     // List all Teams in a League
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)

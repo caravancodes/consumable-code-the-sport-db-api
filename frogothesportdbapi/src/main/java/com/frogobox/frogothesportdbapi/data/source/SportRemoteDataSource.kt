@@ -1,9 +1,7 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -208,6 +206,112 @@ object SportRemoteDataSource :
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun getAllSports(apiKey: String, callback: SportDataSource.GetRemoteCallback<Sports>) {
+        sportApiService.getApiService.getAllSports(apiKey)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Sports>() {
+                override fun onSuccess(model: Sports) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun getAllLeagues(
+        apiKey: String,
+        callback: SportDataSource.GetRemoteCallback<Leagues>
+    ) {
+        sportApiService.getApiService.getAllLeagues(apiKey)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Leagues>() {
+                override fun onSuccess(model: Leagues) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchAllLeagues(
+        apiKey: String,
+        countryName: String,
+        callback: SportDataSource.GetRemoteCallback<Countrys>
+    ) {
+        sportApiService.getApiService.searchAllLeagues(apiKey, countryName)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Countrys>() {
+                override fun onSuccess(model: Countrys) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchAllLeagues(
+        apiKey: String,
+        countryName: String,
+        sportName: String,
+        callback: SportDataSource.GetRemoteCallback<Countrys>
+    ) {
+        sportApiService.getApiService.searchAllLeagues(apiKey, countryName, sportName)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Countrys>() {
+                override fun onSuccess(model: Countrys) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchAllSeasons(
+        apiKey: String,
+        idTeam: String,
+        callback: SportDataSource.GetRemoteCallback<Seasons>
+    ) {
+        sportApiService.getApiService.searchAllSeasons(apiKey, idTeam)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Seasons>() {
+                override fun onSuccess(model: Seasons) {
                     callback.onSuccess(model)
                 }
 

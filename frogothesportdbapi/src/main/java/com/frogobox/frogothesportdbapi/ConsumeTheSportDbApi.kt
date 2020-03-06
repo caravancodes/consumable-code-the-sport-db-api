@@ -2,9 +2,7 @@ package com.frogobox.frogothesportdbapi
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
-import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.*
 import com.frogobox.frogothesportdbapi.data.source.SportDataSource
 import com.frogobox.frogothesportdbapi.data.source.SportRemoteDataSource
 import com.frogobox.frogothesportdbapi.data.source.SportRepository
@@ -182,6 +180,86 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 }
             })
 
+    }
+
+    override fun getAllSports(sportResultCallback: SportResultCallback<Sports>) {
+        sportRepository.getAllSports(apiKey, object : SportDataSource.GetRemoteCallback<Sports> {
+            override fun onSuccess(data: Sports) {
+                sportResultCallback.getResultData(data)
+            }
+
+            override fun onFailed(statusCode: Int, errorMessage: String?) {
+                sportResultCallback.failedResult(statusCode, errorMessage)
+            }
+        })
+    }
+
+    override fun getAllLeagues(sportResultCallback: SportResultCallback<Leagues>) {
+        sportRepository.getAllLeagues(apiKey, object : SportDataSource.GetRemoteCallback<Leagues> {
+            override fun onSuccess(data: Leagues) {
+                sportResultCallback.getResultData(data)
+            }
+
+            override fun onFailed(statusCode: Int, errorMessage: String?) {
+                sportResultCallback.failedResult(statusCode, errorMessage)
+            }
+        })
+    }
+
+    override fun searchAllLeagues(
+        countryName: String,
+        sportResultCallback: SportResultCallback<Countrys>
+    ) {
+        sportRepository.searchAllLeagues(
+            apiKey,
+            countryName,
+            object : SportDataSource.GetRemoteCallback<Countrys> {
+                override fun onSuccess(data: Countrys) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchAllLeagues(
+        countryName: String,
+        sportName: String,
+        sportResultCallback: SportResultCallback<Countrys>
+    ) {
+        sportRepository.searchAllLeagues(
+            apiKey,
+            countryName,
+            sportName,
+            object : SportDataSource.GetRemoteCallback<Countrys> {
+                override fun onSuccess(data: Countrys) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchAllSeasons(
+        idTeam: String,
+        sportResultCallback: SportResultCallback<Seasons>
+    ) {
+        sportRepository.searchAllSeasons(
+            apiKey,
+            idTeam,
+            object : SportDataSource.GetRemoteCallback<Seasons> {
+                override fun onSuccess(data: Seasons) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
     }
 
     override fun searchAllTeamByLeague(
