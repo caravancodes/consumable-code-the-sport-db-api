@@ -7,6 +7,11 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 # Special From This Project
 Simple code and reusable data
 
+# Fecthing Data Technologi
+- Retrofit
+- RxJava
+- OkHttp
+
 # Function Main From This Project
         // Search for team by name
         fun searchForTeamByName(teamName: String, sportResultCallback: SportResultCallback<Teams>)
