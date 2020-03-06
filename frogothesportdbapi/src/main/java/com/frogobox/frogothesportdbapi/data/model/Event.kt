@@ -1,6 +1,4 @@
-package com.frogobox.frogothesportdbapi.data.response
-
-import com.frogobox.frogothesportdbapi.data.model.Player
+package com.frogobox.frogothesportdbapi.data.model
 
 /**
  * Created by Faisal Amir
@@ -16,7 +14,8 @@ import com.frogobox.frogothesportdbapi.data.model.Player
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.data.response
+ * com.frogobox.frogothesportdbapi.data.model
  *
  */
-data class Players(val player: List<Player>)
+class Event {
+}

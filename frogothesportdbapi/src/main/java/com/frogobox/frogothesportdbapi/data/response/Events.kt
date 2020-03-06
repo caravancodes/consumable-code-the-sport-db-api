@@ -1,6 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.data.model.Player
+import com.frogobox.frogothesportdbapi.data.model.Event
 
 /**
  * Created by Faisal Amir
@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Player
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Players(val player: List<Player>)
+data class Events(val event: List<Event>)

@@ -32,10 +32,10 @@ android {
         buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_TEAM", '"api/v1/json/{api_key}/searchteams.php"')
 
         // Search for all players from team
-        buildConfigField("String", "SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS", '"api/v1/json/1/searchplayers.php"')
+        buildConfigField("String", "SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS", '"api/v1/json/{api_key}/searchplayers.php"')
 
         // Search for players by player name & team name
-        buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_PLAYER", '"api/v1/json/1/searchplayers.php"')
+        buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_PLAYER", '"api/v1/json/{api_key}/searchplayers.php"')
 
         // List all Teams in a League
         buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_TEAMS", '"api/v1/json/{api_key}/search_all_teams.php"')
