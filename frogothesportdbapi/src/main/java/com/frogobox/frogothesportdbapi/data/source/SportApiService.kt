@@ -5,7 +5,6 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -34,10 +33,22 @@ import java.util.concurrent.TimeUnit
 
 interface SportApiService {
 
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
+    fun searchForTeamByName(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
+    ): Observable<Teams>
+
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
+    fun searchForTeamByShortCode(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_SHORT_CODE_NAME) shortCode: String
+    ): Observable<Teams>
+
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
     fun searchTeamByLeague(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_LEAGUE) league: String
+        @Query(BuildConfig.QUERY_LEAGUE_NAME) league: String
     ): Observable<Teams>
 
     companion object Factory {

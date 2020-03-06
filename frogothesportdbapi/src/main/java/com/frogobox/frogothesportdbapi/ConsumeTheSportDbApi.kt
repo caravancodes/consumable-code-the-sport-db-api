@@ -27,6 +27,42 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
     private val sportRepository = SportRepository(SportRemoteDataSource)
 
+    override fun searchForTeamByName(
+        teamName: String,
+        sportResultCallback: SportResultCallback<Teams>
+    ) {
+        sportRepository.searchForTeamByName(
+            apiKey,
+            teamName,
+            object : SportDataSource.GetRemoteCallback<Teams> {
+                override fun onSuccess(data: Teams) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchForTeamByShortCode(
+        shortCode: String,
+        sportResultCallback: SportResultCallback<Teams>
+    ) {
+        sportRepository.searchForTeamByName(
+            apiKey,
+            shortCode,
+            object : SportDataSource.GetRemoteCallback<Teams> {
+                override fun onSuccess(data: Teams) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
     override fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>) {
 
         sportRepository.searchTeamByLeague(

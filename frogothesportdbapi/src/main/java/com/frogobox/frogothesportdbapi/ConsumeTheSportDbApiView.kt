@@ -22,6 +22,12 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  */
 interface ConsumeTheSportDbApiView {
 
-    fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>)
+    // Search for team by name
+    fun searchForTeamByName(teamName: String, sportResultCallback: SportResultCallback<Teams>)
 
+    // Search for team short code
+    fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
+
+    fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>)
+    
 }

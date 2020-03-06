@@ -24,6 +24,52 @@ import io.reactivex.schedulers.Schedulers
  */
 object SportRemoteDataSource :
     SportDataSource {
+    override fun searchForTeamByName(
+        apiKey: String,
+        teamName: String,
+        callback: SportDataSource.GetRemoteCallback<Teams>
+    ) {
+        SportApiService.getApiService
+            .searchForTeamByName(apiKey, teamName)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Teams>() {
+                override fun onSuccess(model: Teams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchForTeamByShortCode(
+        apiKey: String,
+        shortCode: String,
+        callback: SportDataSource.GetRemoteCallback<Teams>
+    ) {
+        SportApiService.getApiService
+            .searchForTeamByShortCode(apiKey, shortCode)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Teams>() {
+                override fun onSuccess(model: Teams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
     override fun searchTeamByLeague(
         apiKey: String,
         league: String,

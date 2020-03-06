@@ -25,13 +25,33 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
 
+        // The Sport DB API base url
+        buildConfigField("String", "SPORTDB_BASE_URL", '"https://www.thesportsdb.com/"')
+
+        // Search for team by name & short code
+        buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_TEAM", '"api/v1/json/{api_key}/searchteams.php"')
+
+        buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_TEAMS", '"api/v1/json/{api_key}/search_all_teams.php"')
+
+        // Default Free API KEY The Sport DB API
         buildConfigField("String", "SPORTDB_API_KEY", '"1"')
+
+        // ---- List path ----
         buildConfigField("String", "PATH_API_KEY", '"api_key"')
 
-        buildConfigField("String", "QUERY_LEAGUE", '"l"')
-
-        buildConfigField("String", "SPORTDB_BASE_URL", '"https://www.thesportsdb.com/"')
-        buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_TEAMS", '"api/v1/json/{api_key}/search_all_teams.php"')
+        // ---- List query ----
+        buildConfigField("String", "QUERY_LEAGUE_NAME", '"l"')
+        buildConfigField("String", "QUERY_TEAM_NAME", '"t"')
+        buildConfigField("String", "QUERY_SHORT_CODE_NAME", '"sname"')
+        buildConfigField("String", "QUERY_PLAYER_NAME", '"p"')
+        buildConfigField("String", "QUERY_EVENT_NAME", '"e"')
+        buildConfigField("String", "QUERY_COUNTRY_NAME", '"c"')
+        buildConfigField("String", "QUERY_SPORT_NAME", '"s"')
+        buildConfigField("String", "QUERY_SEASON", '"s"')
+        buildConfigField("String", "QUERY_DATE", '"d"')
+        buildConfigField("String", "QUERY_ROUND", '"s"')
+        buildConfigField("String", "QUERY_ID", '"id"')
+        buildConfigField("String", "QUERY_USER_LOVED", '"u"')
 
     }
 

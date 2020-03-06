@@ -22,6 +22,9 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  */
 interface SportDataSource {
 
+    fun searchForTeamByName(apiKey: String, teamName: String, callback: GetRemoteCallback<Teams>)
+    fun searchForTeamByShortCode(apiKey: String, shortCode: String, callback: GetRemoteCallback<Teams>)
+
     fun searchTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
 
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
