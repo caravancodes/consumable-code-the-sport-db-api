@@ -7,7 +7,7 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 # Special From This Project
 Simple code and reusable data
 
-# Fecthing Data Technologi
+# Fecthing Data Library
 - Retrofit
 - RxJava
 - OkHttp
