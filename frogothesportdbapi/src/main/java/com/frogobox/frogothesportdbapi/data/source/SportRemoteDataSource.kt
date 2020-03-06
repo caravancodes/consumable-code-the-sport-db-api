@@ -1,5 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.source
 
+import android.content.Context
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -25,12 +26,19 @@ import io.reactivex.schedulers.Schedulers
  */
 object SportRemoteDataSource :
     SportDataSource {
+    
+    val sportApiService = SportApiService
+    
+    fun usingChuckInterceptor(context: Context){
+        sportApiService.usingChuckInterceptor(context)
+    }
+    
     override fun searchForTeamByName(
         apiKey: String,
         teamName: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchForTeamByName(apiKey, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -53,7 +61,7 @@ object SportRemoteDataSource :
         shortCode: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchForTeamByShortCode(apiKey, shortCode)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -76,7 +84,7 @@ object SportRemoteDataSource :
         teamName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchForAllPlayerFromTeam(apiKey, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -99,7 +107,7 @@ object SportRemoteDataSource :
         playerName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchForPlayerByName(apiKey, playerName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -123,7 +131,7 @@ object SportRemoteDataSource :
         playerName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchForPlayerByPlayerNameAndTeamName(apiKey, teamName, playerName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -146,7 +154,7 @@ object SportRemoteDataSource :
         league: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        SportApiService.getApiService
+        sportApiService.getApiService
             .searchAllTeamByLeague(apiKey, league)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

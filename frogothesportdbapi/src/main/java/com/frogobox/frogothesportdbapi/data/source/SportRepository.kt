@@ -1,5 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.source
 
+import android.content.Context
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -22,6 +23,11 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  */
 open class SportRepository(private val remoteDataSource: SportRemoteDataSource) :
     SportDataSource {
+
+    fun usingChuckInterceptor(context: Context) {
+        remoteDataSource.usingChuckInterceptor(context)
+    }
+
     override fun searchForTeamByName(
         apiKey: String,
         teamName: String,

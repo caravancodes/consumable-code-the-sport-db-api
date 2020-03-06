@@ -1,8 +1,10 @@
 package com.frogobox.frogothesportdbapi.data.source
 
+import android.content.Context
 import com.frogobox.frogothesportdbapi.BuildConfig
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.readystatesoftware.chuck.ChuckInterceptor
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -81,16 +83,22 @@ interface SportApiService {
 
     companion object Factory {
 
+        var isUsingChuckInterceptor = false
+        lateinit var context: Context
+
+        fun usingChuckInterceptor(context: Context){
+            isUsingChuckInterceptor = true
+            this.context = context
+        }
+
         val getApiService: SportApiService by lazy {
             val mLoggingInterceptor = HttpLoggingInterceptor()
             mLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
-            val cacheSize = (5 * 1024 * 1024).toLong()
-            val mClient = if (BuildConfig.DEBUG) {
+            val mClient = if (isUsingChuckInterceptor) {
                 OkHttpClient.Builder()
-//                    .addInterceptor(ChuckInterceptor(BaseApplication.getContext()))
                     .addInterceptor(mLoggingInterceptor)
-//                    .addInterceptor(ChuckInterceptor(BaseApplication.getContext()))
+                    .addInterceptor(ChuckInterceptor(context))
                     .readTimeout(30, TimeUnit.SECONDS)
                     .connectTimeout(30, TimeUnit.SECONDS)
                     .build()
