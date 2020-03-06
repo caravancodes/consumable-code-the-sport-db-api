@@ -69,8 +69,8 @@ interface SportApiService {
     @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
     fun searchForPlayer(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String,
-        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
+        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String,
+        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
     ): Observable<Players>
 
     // Search for event by event name

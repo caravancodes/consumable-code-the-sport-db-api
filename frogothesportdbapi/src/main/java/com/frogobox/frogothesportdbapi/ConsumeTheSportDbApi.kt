@@ -107,14 +107,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForPlayer(
-        teamName: String,
         playerName: String,
+        teamName: String,
         sportResultCallback: SportResultCallback<Players>
     ) {
         sportRepository.searchForPlayer(
             apiKey,
-            teamName,
             playerName,
+            teamName,
             object : SportDataSource.GetRemoteCallback<Players> {
                 override fun onSuccess(data: Players) {
                     sportResultCallback.getResultData(data)

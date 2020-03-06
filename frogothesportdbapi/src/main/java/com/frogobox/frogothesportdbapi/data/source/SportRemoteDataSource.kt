@@ -128,12 +128,12 @@ object SportRemoteDataSource :
 
     override fun searchForPlayer(
         apiKey: String,
-        teamName: String,
         playerName: String,
+        teamName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
-            .searchForPlayer(apiKey, teamName, playerName)
+            .searchForPlayer(apiKey, playerName, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SportApiCallback<Players>() {

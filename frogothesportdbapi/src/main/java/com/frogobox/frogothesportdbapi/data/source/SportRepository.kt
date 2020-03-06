@@ -63,14 +63,14 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
 
     override fun searchForPlayer(
         apiKey: String,
-        teamName: String,
         playerName: String,
+        teamName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         remoteDataSource.searchForPlayer(
             apiKey,
-            teamName,
             playerName,
+            teamName,
             callback
         )
     }

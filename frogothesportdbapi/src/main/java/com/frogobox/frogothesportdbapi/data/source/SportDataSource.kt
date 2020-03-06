@@ -41,7 +41,7 @@ interface SportDataSource {
     fun searchForPlayer(apiKey: String, playerName: String, callback: GetRemoteCallback<Players>)
 
     // Search for players by player name and team name
-    fun searchForPlayer(apiKey: String, teamName: String, playerName: String, callback: GetRemoteCallback<Players>)
+    fun searchForPlayer(apiKey: String, playerName: String, teamName: String, callback: GetRemoteCallback<Players>)
 
     // Search for event by event name
     fun searchForEvent(apiKey: String, eventName: String, callback: GetRemoteCallback<Events>)
