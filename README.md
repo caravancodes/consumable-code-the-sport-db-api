@@ -78,15 +78,25 @@ Add it in your root build.gradle at the end of repositories:
 <h3>Step 2. Add the dependency</h3>
 
 	dependencies {
-            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:Tag'
+            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:$version_release'
 	}
 	
-	
-# Sample Code Kotlin and Java
-    
-# Important Note (Caution)
+<h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
 
-# Screen Shoot Apps
+	val consumeTheSportDbApi = ConsumeTheSportDbApi("1") // "1" is API KEY
+    consumeTheSportDbApi.searchForPlayerByName(
+        "Danny Welbeck",
+        object : SportResultCallback<Players> {
+            override fun getResultData(data: Players) {
+                
+                // * PLACE YOUR CODE HERE FOR UI / ARRAYLIST *
+
+            }
+
+            override fun failedResult(statusCode: Int, errorMessage: String?) {}
+
+        })
+	
 
 # Colaborator
 Very open to anyone, I'll write your name under this, please contribute by sending an email to me
