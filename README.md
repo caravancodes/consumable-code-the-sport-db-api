@@ -1,5 +1,5 @@
 # consumable-code-the-sport-db-api By AmirIsBack
-- v1.0.0 - Development
+- v1.0.1 - Development
 
 # About This Project
 Eliminates the method of retrieving json data using retrofit repeatedly. so this project has a set of functions to retrieve data without the need for fetching data using the retrofit of the API
@@ -14,23 +14,52 @@ Simple code and reusable data
 - Chuck Interceptor
 
 # Function Main From This Project
-        // Search for team by name
-        fun searchForTeamByName(teamName: String, sportResultCallback: SportResultCallback<Teams>)
-    
-        // Search for team short code
-        fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
-    
-        // Search for all players from team *Patreon ONLY*
-        fun searchForAllPlayerFromTeam(teamName: String, sportResultCallback: SportResultCallback<Players>)
-    
-        // Search for players by player name
-        fun searchForPlayerByName(playerName: String, sportResultCallback: SportResultCallback<Players>)
-    
-        // Search for players by player name and team name
-        fun searchForPlayerByPlayerNameAndTeamName(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
-    
-        // List all Teams in a League
-        fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // Switch For Using Chuck Interceptor
+    fun usingChuckInterceptor(context: Context)
+
+    // Search for team by name
+    fun searchForTeamByName(teamName: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // Search for team short code
+    fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // Search for all players from team *Patreon ONLY*
+    fun searchForAllPlayer(teamName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for players by player name
+    fun searchForPlayer(playerName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for players by player name and team name
+    fun searchForPlayer(playerName: String, teamName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for event by event name
+    fun searchForEvent(eventName: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Search For event by event name and season
+    fun searchForEvent(eventName: String, season: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Search for event by event file name
+    fun searchForEventFileName(eventFileName: String, sportResultCallback: SportResultCallback<Events>)
+
+
+    // List all sports
+    fun getAllSports(sportResultCallback: SportResultCallback<Sports>)
+
+    // List all leagues
+    fun getAllLeagues(sportResultCallback: SportResultCallback<Leagues>)
+
+    // List all Leagues in a country
+    fun searchAllLeagues(countryName: String, sportResultCallback: SportResultCallback<Countrys>)
+
+    // List all Leagues in a country specific by sport
+    fun searchAllLeagues(countryName: String, sportName: String, sportResultCallback: SportResultCallback<Countrys>)
+
+    // List all Seasons in a League
+    fun searchAllSeasons(idTeam: String, sportResultCallback: SportResultCallback<Seasons>)
+
+    // List all Teams in a League
+    fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
 
 # Android Library Version (build.gradle)
 - ext.kotlin_version = '1.3.61'
@@ -42,31 +71,11 @@ Simple code and reusable data
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.0
+    $version_release = 1.0.1
 
 What's New??
 
-    * 
-    Some Function for this version is available
-    
-    // Search for team by name
-    fun searchForTeamByName(teamName: String, sportResultCallback: SportResultCallback<Teams>)
-    
-    // Search for team short code
-    fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
-    
-    // Search for all players from team *Patreon ONLY*
-    fun searchForAllPlayerFromTeam(teamName: String, sportResultCallback: SportResultCallback<Players>)
-    
-    // Search for players by player name
-    fun searchForPlayerByName(playerName: String, sportResultCallback: SportResultCallback<Players>)
-    
-    // Search for players by player name and team name
-    fun searchForPlayerByPlayerNameAndTeamName(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
-    
-    // List all Teams in a League
-    fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
-    *
+    * Adding Chuck Interceptor Control *
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -90,6 +99,7 @@ Add it in your root build.gradle at the end of repositories:
 <h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
 
 	val consumeTheSportDbApi = ConsumeTheSportDbApi("1") // "1" is API KEY
+	consumeTheSportDbApi.usingChuckInterceptor(this) // This is Code Chuck Interceptor
     consumeTheSportDbApi.searchForPlayerByName(
         "Danny Welbeck",
         object : SportResultCallback<Players> {
