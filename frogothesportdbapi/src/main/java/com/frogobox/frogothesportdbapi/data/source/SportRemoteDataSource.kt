@@ -27,13 +27,13 @@ import io.reactivex.schedulers.Schedulers
  */
 object SportRemoteDataSource :
     SportDataSource {
-    
-    val sportApiService = SportApiService
-    
-    override fun usingChuckInterceptor(context: Context){
+
+    private val sportApiService = SportApiService
+
+    override fun usingChuckInterceptor(context: Context) {
         sportApiService.usingChuckInterceptor(context)
     }
-    
+
     override fun searchForTeamByName(
         apiKey: String,
         teamName: String,
@@ -181,6 +181,29 @@ object SportRemoteDataSource :
     ) {
         sportApiService.getApiService
             .searchForEvent(apiKey, eventName, season)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Events>() {
+                override fun onSuccess(model: Events) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchForEventFileName(
+        apiKey: String,
+        eventFileName: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        sportApiService.getApiService
+            .searchForEventFileName(apiKey, eventFileName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SportApiCallback<Events>() {

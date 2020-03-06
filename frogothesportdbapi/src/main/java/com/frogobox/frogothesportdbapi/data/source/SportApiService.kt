@@ -88,6 +88,13 @@ interface SportApiService {
         @Query(BuildConfig.QUERY_SEASON) season: String
     ): Observable<Events>
 
+    // Search for event by event file name
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT_FILE_NAME)
+    fun searchForEventFileName(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_EVENT_NAME) eventFileName: String
+    ): Observable<Events>
+
     // List all Teams in a League
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
     fun searchAllTeamByLeague(

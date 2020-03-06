@@ -56,7 +56,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
         shortCode: String,
         sportResultCallback: SportResultCallback<Teams>
     ) {
-        sportRepository.searchForTeamByName(
+        sportRepository.searchForTeamByShortCode(
             apiKey,
             shortCode,
             object : SportDataSource.GetRemoteCallback<Teams> {
@@ -162,6 +162,26 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
             })
+    }
+
+    override fun searchForEventFileName(
+        eventFileName: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+
+        sportRepository.searchForEventFileName(
+            apiKey,
+            eventFileName,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+
     }
 
     override fun searchAllTeamByLeague(

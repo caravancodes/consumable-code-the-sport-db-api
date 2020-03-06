@@ -49,6 +49,9 @@ interface ConsumeTheSportDbApiView {
     // Search For event by event name and season
     fun searchForEvent(eventName: String, season: String, sportResultCallback: SportResultCallback<Events>)
 
+    // Search for event by event file name
+    fun searchForEventFileName(eventFileName: String, sportResultCallback: SportResultCallback<Events>)
+
     // List all Teams in a League
     fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
 

@@ -49,6 +49,9 @@ interface SportDataSource {
     // Search For event by event name and season
     fun searchForEvent(apiKey: String, eventName: String, season: String, callback: GetRemoteCallback<Events>)
 
+    // Search for event by event file name
+    fun searchForEventFileName(apiKey: String, eventFileName: String, callback: GetRemoteCallback<Events>)
+
     // List all Teams in a League
     fun searchAllTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
 

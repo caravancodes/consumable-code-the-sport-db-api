@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.frogothesportdbapi.ConsumeTheSportDbApi
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -28,12 +29,12 @@ class MainActivity : AppCompatActivity() {
 
             })
 
-        consumeTheSportDbApi.searchAllTeamByLeague(
-            "English Premier League",
-            object : SportResultCallback<Teams> {
-                override fun getResultData(data: Teams) {
-                    for (i in data.teams.indices) {
-                        println(data.teams[i].strTeam)
+        consumeTheSportDbApi.searchForEventFileName(
+            "English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+            object : SportResultCallback<Events> {
+                override fun getResultData(data: Events) {
+                    for (i in data.event.indices) {
+                        println(data.event[i].dateEvent)
                     }
                 }
 

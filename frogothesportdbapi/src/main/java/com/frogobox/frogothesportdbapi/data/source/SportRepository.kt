@@ -92,6 +92,14 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
         remoteDataSource.searchForEvent(apiKey, eventName, season, callback)
     }
 
+    override fun searchForEventFileName(
+        apiKey: String,
+        eventFileName: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.searchForEventFileName(apiKey, eventFileName, callback)
+    }
+
     override fun searchAllTeamByLeague(
         apiKey: String,
         league: String,
