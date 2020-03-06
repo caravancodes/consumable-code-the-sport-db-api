@@ -11,6 +11,7 @@ Simple code and reusable data
 - Retrofit
 - RxJava
 - OkHttp
+- Chuck Interceptor
 
 # Function Main From This Project
         // Search for team by name
