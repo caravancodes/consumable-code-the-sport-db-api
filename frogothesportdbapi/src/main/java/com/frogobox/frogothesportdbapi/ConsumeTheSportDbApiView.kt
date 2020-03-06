@@ -2,6 +2,7 @@ package com.frogobox.frogothesportdbapi
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -41,6 +42,12 @@ interface ConsumeTheSportDbApiView {
 
     // Search for players by player name and team name
     fun searchForPlayer(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for event by event name
+    fun searchForEvent(eventName: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Search For event by event name and season
+    fun searchForEvent(eventName: String, season: String, sportResultCallback: SportResultCallback<Events>)
 
     // List all Teams in a League
     fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)

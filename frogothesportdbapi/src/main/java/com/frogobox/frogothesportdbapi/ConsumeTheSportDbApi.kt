@@ -2,6 +2,7 @@ package com.frogobox.frogothesportdbapi
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 import com.frogobox.frogothesportdbapi.data.source.SportDataSource
@@ -125,7 +126,48 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>) {
+    override fun searchForEvent(
+        eventName: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.searchForEvent(
+            apiKey,
+            eventName,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchForEvent(
+        eventName: String,
+        season: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.searchForEvent(
+            apiKey,
+            eventName,
+            season,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchAllTeamByLeague(
+        league: String,
+        sportResultCallback: SportResultCallback<Teams>
+    ) {
 
         sportRepository.searchAllTeamByLeague(
             apiKey,
