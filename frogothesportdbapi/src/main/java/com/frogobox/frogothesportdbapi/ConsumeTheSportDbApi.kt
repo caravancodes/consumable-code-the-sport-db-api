@@ -29,7 +29,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
     private val sportRepository = SportRepository(SportRemoteDataSource)
 
-    fun usingChuckInterceptor(context: Context) {
+    override fun usingChuckInterceptor(context: Context) {
         sportRepository.usingChuckInterceptor(context)
     }
 
