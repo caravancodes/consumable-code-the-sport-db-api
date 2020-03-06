@@ -1,6 +1,7 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -44,34 +45,51 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
         remoteDataSource.searchForTeamByShortCode(apiKey, shortCode, callback)
     }
 
-    override fun searchForAllPlayerFromTeam(
+    override fun searchForAllPlayer(
         apiKey: String,
         teamName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        remoteDataSource.searchForAllPlayerFromTeam(apiKey, teamName, callback)
+        remoteDataSource.searchForAllPlayer(apiKey, teamName, callback)
     }
 
-    override fun searchForPlayerByName(
+    override fun searchForPlayer(
         apiKey: String,
         playerName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        remoteDataSource.searchForPlayerByName(apiKey, playerName, callback)
+        remoteDataSource.searchForPlayer(apiKey, playerName, callback)
     }
 
-    override fun searchForPlayerByPlayerNameAndTeamName(
+    override fun searchForPlayer(
         apiKey: String,
         teamName: String,
         playerName: String,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
-        remoteDataSource.searchForPlayerByPlayerNameAndTeamName(
+        remoteDataSource.searchForPlayer(
             apiKey,
             teamName,
             playerName,
             callback
         )
+    }
+
+    override fun searchForEvent(
+        apiKey: String,
+        eventName: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.searchForEvent(apiKey, eventName, callback)
+    }
+
+    override fun searchForEvent(
+        apiKey: String,
+        eventName: String,
+        season: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.searchForEvent(apiKey, eventName, season, callback)
     }
 
     override fun searchAllTeamByLeague(

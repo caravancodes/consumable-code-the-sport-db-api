@@ -37,9 +37,28 @@ android {
         // Search for players by player name & team name
         buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_PLAYER", '"api/v1/json/{api_key}/searchplayers.php"')
 
+        // Search for event by event name
+        buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_EVENT", '"api/v1/json/{api_key}/searchevents.php"')
+
+        // Search for event by event file name
+        buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_EVENT_FILE_NAME", '"api/v1/json/{api_key}/searchfilename.php"')
+
+        // List all sports
+        buildConfigField("String", "SPORTDB_URL_GET_ALL_SPORTS", '"api/v1/json/{api_key}/all_sports.php"')
+
+        // List all leagues
+        buildConfigField("String", "SPORTDB_URL_GET_ALL_LEAGUES", '"api/v1/json/{api_key}/all_leagues.php"')
+
+        // List all Leagues in a country
+        buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_LEAGUES", '"api/v1/json/{api_key}/search_all_leagues.php"')
+
+        // List all Seasons in a League
+        buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_SEASONS", '"api/v1/json/{api_key}/search_all_seasons.php"')
+
         // List all Teams in a League
         buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_TEAMS", '"api/v1/json/{api_key}/search_all_teams.php"')
 
+        // List All teams details in a league by Id
 
         // Default Free API KEY The Sport DB API
         buildConfigField("String", "SPORTDB_API_KEY", '"1"')

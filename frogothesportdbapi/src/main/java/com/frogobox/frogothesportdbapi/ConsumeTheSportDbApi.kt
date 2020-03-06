@@ -69,11 +69,11 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchForAllPlayerFromTeam(
+    override fun searchForAllPlayer(
         teamName: String,
         sportResultCallback: SportResultCallback<Players>
     ) {
-        sportRepository.searchForAllPlayerFromTeam(
+        sportRepository.searchForAllPlayer(
             apiKey,
             teamName,
             object : SportDataSource.GetRemoteCallback<Players> {
@@ -87,11 +87,11 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchForPlayerByName(
+    override fun searchForPlayer(
         playerName: String,
         sportResultCallback: SportResultCallback<Players>
     ) {
-        sportRepository.searchForPlayerByName(
+        sportRepository.searchForPlayer(
             apiKey,
             playerName,
             object : SportDataSource.GetRemoteCallback<Players> {
@@ -105,12 +105,12 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchForPlayerByPlayerNameAndTeamName(
+    override fun searchForPlayer(
         teamName: String,
         playerName: String,
         sportResultCallback: SportResultCallback<Players>
     ) {
-        sportRepository.searchForPlayerByPlayerNameAndTeamName(
+        sportRepository.searchForPlayer(
             apiKey,
             teamName,
             playerName,

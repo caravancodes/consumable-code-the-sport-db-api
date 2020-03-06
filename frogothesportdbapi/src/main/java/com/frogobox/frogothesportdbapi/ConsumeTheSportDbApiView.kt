@@ -34,13 +34,13 @@ interface ConsumeTheSportDbApiView {
     fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
 
     // Search for all players from team *Patreon ONLY*
-    fun searchForAllPlayerFromTeam(teamName: String, sportResultCallback: SportResultCallback<Players>)
+    fun searchForAllPlayer(teamName: String, sportResultCallback: SportResultCallback<Players>)
 
     // Search for players by player name
-    fun searchForPlayerByName(playerName: String, sportResultCallback: SportResultCallback<Players>)
+    fun searchForPlayer(playerName: String, sportResultCallback: SportResultCallback<Players>)
 
     // Search for players by player name and team name
-    fun searchForPlayerByPlayerNameAndTeamName(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
+    fun searchForPlayer(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
 
     // List all Teams in a League
     fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)

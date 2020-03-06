@@ -2,6 +2,7 @@ package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -34,18 +35,22 @@ interface SportDataSource {
     fun searchForTeamByShortCode(apiKey: String, shortCode: String, callback: GetRemoteCallback<Teams>)
 
     // Search for all players from team *Patreon ONLY*
-    fun searchForAllPlayerFromTeam(apiKey: String, teamName: String, callback: GetRemoteCallback<Players>)
+    fun searchForAllPlayer(apiKey: String, teamName: String, callback: GetRemoteCallback<Players>)
 
     // Search for players by player name
-    fun searchForPlayerByName(apiKey: String, playerName: String, callback: GetRemoteCallback<Players>)
+    fun searchForPlayer(apiKey: String, playerName: String, callback: GetRemoteCallback<Players>)
 
     // Search for players by player name and team name
-    fun searchForPlayerByPlayerNameAndTeamName(apiKey: String, teamName: String, playerName: String, callback: GetRemoteCallback<Players>)
+    fun searchForPlayer(apiKey: String, teamName: String, playerName: String, callback: GetRemoteCallback<Players>)
 
+    // Search for event by event name
+    fun searchForEvent(apiKey: String, eventName: String, callback: GetRemoteCallback<Events>)
+
+    // Search For event by event name and season
+    fun searchForEvent(apiKey: String, eventName: String, season: String, callback: GetRemoteCallback<Events>)
 
     // List all Teams in a League
     fun searchAllTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
-
 
     // Response Callback
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>

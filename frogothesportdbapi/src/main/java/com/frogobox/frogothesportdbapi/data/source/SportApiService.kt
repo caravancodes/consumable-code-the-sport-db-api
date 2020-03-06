@@ -2,6 +2,7 @@ package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
 import com.frogobox.frogothesportdbapi.BuildConfig
+import com.frogobox.frogothesportdbapi.data.response.Events
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 import com.readystatesoftware.chuck.ChuckInterceptor
@@ -52,27 +53,40 @@ interface SportApiService {
 
     // Search for all players from team *Patreon ONLY*
     @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
-    fun searchForAllPlayerFromTeam(
+    fun searchForAllPlayer(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
     ): Observable<Players>
 
     // Search for players by player name
     @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
-    fun searchForPlayerByName(
+    fun searchForPlayer(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
     ): Observable<Players>
 
     // Search for players by player name and team name
     @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
-    fun searchForPlayerByPlayerNameAndTeamName(
+    fun searchForPlayer(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String,
         @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
     ): Observable<Players>
 
+    // Search for event by event name
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT)
+    fun searchForEvent(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_EVENT_NAME) eventName: String
+    ): Observable<Events>
 
+    // Search For event by event name and season
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT)
+    fun searchForEvent(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_EVENT_NAME) eventName: String,
+        @Query(BuildConfig.QUERY_SEASON) season: String
+    ): Observable<Events>
 
     // List all Teams in a League
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)

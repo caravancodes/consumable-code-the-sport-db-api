@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.frogothesportdbapi.ConsumeTheSportDbApi
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
-import com.frogobox.frogothesportdbapi.data.model.Team
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val consumeTheSportDbApi = ConsumeTheSportDbApi("1")
         consumeTheSportDbApi.usingChuckInterceptor(this)
-        consumeTheSportDbApi.searchForPlayerByName(
+        consumeTheSportDbApi.searchForPlayer(
             "Danny Welbeck",
             object : SportResultCallback<Players> {
                 override fun getResultData(data: Players) {
