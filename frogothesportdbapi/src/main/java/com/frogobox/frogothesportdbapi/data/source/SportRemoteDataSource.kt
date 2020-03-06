@@ -29,7 +29,7 @@ object SportRemoteDataSource :
     
     val sportApiService = SportApiService
     
-    fun usingChuckInterceptor(context: Context){
+    override fun usingChuckInterceptor(context: Context){
         sportApiService.usingChuckInterceptor(context)
     }
     

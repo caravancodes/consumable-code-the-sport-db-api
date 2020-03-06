@@ -24,7 +24,7 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
 open class SportRepository(private val remoteDataSource: SportRemoteDataSource) :
     SportDataSource {
 
-    fun usingChuckInterceptor(context: Context) {
+    override fun usingChuckInterceptor(context: Context) {
         remoteDataSource.usingChuckInterceptor(context)
     }
 

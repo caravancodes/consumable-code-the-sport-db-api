@@ -1,5 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.source
 
+import android.content.Context
 import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
 import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
@@ -22,6 +23,9 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  *
  */
 interface SportDataSource {
+
+    // Switch For Using Chuck Interceptor
+    fun usingChuckInterceptor(context: Context)
 
     // Search for team by name
     fun searchForTeamByName(apiKey: String, teamName: String, callback: GetRemoteCallback<Teams>)
