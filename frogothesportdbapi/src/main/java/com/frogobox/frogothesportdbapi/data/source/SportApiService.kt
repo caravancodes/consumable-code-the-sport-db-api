@@ -1,6 +1,7 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import com.frogobox.frogothesportdbapi.BuildConfig
+import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
@@ -33,20 +34,47 @@ import java.util.concurrent.TimeUnit
 
 interface SportApiService {
 
+    // Search for team by name
     @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
     fun searchForTeamByName(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
     ): Observable<Teams>
 
+    // Search for team short code
     @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
     fun searchForTeamByShortCode(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_SHORT_CODE_NAME) shortCode: String
     ): Observable<Teams>
 
+    // Search for all players from team *Patreon ONLY*
+    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    fun searchForAllPlayerFromTeam(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
+    ): Observable<Players>
+
+    // Search for players by player name
+    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    fun searchForPlayerByName(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
+    ): Observable<Players>
+
+    // Search for players by player name and team name
+    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    fun searchForPlayerByPlayerNameAndTeamName(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String,
+        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
+    ): Observable<Players>
+
+
+
+    // List all Teams in a League
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
-    fun searchTeamByLeague(
+    fun searchAllTeamByLeague(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_LEAGUE_NAME) league: String
     ): Observable<Teams>

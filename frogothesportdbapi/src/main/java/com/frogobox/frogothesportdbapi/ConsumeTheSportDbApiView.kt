@@ -1,6 +1,7 @@
 package com.frogobox.frogothesportdbapi
 
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
+import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
 /**
@@ -28,6 +29,16 @@ interface ConsumeTheSportDbApiView {
     // Search for team short code
     fun searchForTeamByShortCode(shortCode: String, sportResultCallback: SportResultCallback<Teams>)
 
-    fun searchTeams(league: String, sportResultCallback: SportResultCallback<Teams>)
-    
+    // Search for all players from team *Patreon ONLY*
+    fun searchForAllPlayerFromTeam(teamName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for players by player name
+    fun searchForPlayerByName(playerName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Search for players by player name and team name
+    fun searchForPlayerByPlayerNameAndTeamName(teamName: String, playerName: String, sportResultCallback: SportResultCallback<Players>)
+
+    // List all Teams in a League
+    fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
+
 }

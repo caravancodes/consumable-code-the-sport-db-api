@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val consumeTheSportDbApi = ConsumeTheSportDbApi("1")
-        consumeTheSportDbApi.searchTeams(
+        consumeTheSportDbApi.searchAllTeamByLeague(
             "English Premier League",
             object : SportResultCallback<Teams> {
                 override fun getResultData(data: Teams) {

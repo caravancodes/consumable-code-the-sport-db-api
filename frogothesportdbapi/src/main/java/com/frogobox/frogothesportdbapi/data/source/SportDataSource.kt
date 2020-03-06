@@ -1,6 +1,7 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import com.frogobox.frogothesportdbapi.base.BaseSportDataSource
+import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
 /**
@@ -22,11 +23,27 @@ import com.frogobox.frogothesportdbapi.data.response.Teams
  */
 interface SportDataSource {
 
+    // Search for team by name
     fun searchForTeamByName(apiKey: String, teamName: String, callback: GetRemoteCallback<Teams>)
+
+    // Search for team short code
     fun searchForTeamByShortCode(apiKey: String, shortCode: String, callback: GetRemoteCallback<Teams>)
 
-    fun searchTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
+    // Search for all players from team *Patreon ONLY*
+    fun searchForAllPlayerFromTeam(apiKey: String, teamName: String, callback: GetRemoteCallback<Players>)
 
+    // Search for players by player name
+    fun searchForPlayerByName(apiKey: String, playerName: String, callback: GetRemoteCallback<Players>)
+
+    // Search for players by player name and team name
+    fun searchForPlayerByPlayerNameAndTeamName(apiKey: String, teamName: String, playerName: String, callback: GetRemoteCallback<Players>)
+
+
+    // List all Teams in a League
+    fun searchAllTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
+
+
+    // Response Callback
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
 
 }

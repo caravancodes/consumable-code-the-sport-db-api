@@ -1,5 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.source
 
+import com.frogobox.frogothesportdbapi.data.response.Players
 import com.frogobox.frogothesportdbapi.data.response.Teams
 
 /**
@@ -37,11 +38,41 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
         remoteDataSource.searchForTeamByShortCode(apiKey, shortCode, callback)
     }
 
-    override fun searchTeamByLeague(
+    override fun searchForAllPlayerFromTeam(
+        apiKey: String,
+        teamName: String,
+        callback: SportDataSource.GetRemoteCallback<Players>
+    ) {
+        remoteDataSource.searchForAllPlayerFromTeam(apiKey, teamName, callback)
+    }
+
+    override fun searchForPlayerByName(
+        apiKey: String,
+        playerName: String,
+        callback: SportDataSource.GetRemoteCallback<Players>
+    ) {
+        remoteDataSource.searchForPlayerByName(apiKey, playerName, callback)
+    }
+
+    override fun searchForPlayerByPlayerNameAndTeamName(
+        apiKey: String,
+        teamName: String,
+        playerName: String,
+        callback: SportDataSource.GetRemoteCallback<Players>
+    ) {
+        remoteDataSource.searchForPlayerByPlayerNameAndTeamName(
+            apiKey,
+            teamName,
+            playerName,
+            callback
+        )
+    }
+
+    override fun searchAllTeamByLeague(
         apiKey: String,
         league: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
-        remoteDataSource.searchTeamByLeague(apiKey, league, callback)
+        remoteDataSource.searchAllTeamByLeague(apiKey, league, callback)
     }
 }
