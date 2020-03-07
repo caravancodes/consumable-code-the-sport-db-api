@@ -129,10 +129,39 @@ interface SportApiService {
 
     // List all Teams in a League
     @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
-    fun searchAllTeamByLeague(
+    fun searchAllTeam(
         @Path(BuildConfig.PATH_API_KEY) apiKey: String,
         @Query(BuildConfig.QUERY_LEAGUE_NAME) league: String
     ): Observable<Teams>
+
+    // List all Teams in Sport and Country
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
+    fun searchAllTeam(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_SPORT_NAME) sportName: String,
+        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String
+    ): Observable<Teams>
+
+    // List All teams details in a league by Id
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_ALL_TEAMS)
+    fun lookupAllTeam(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String
+    ): Observable<Teams>
+
+    // List All players in a team by Team Id *Patreon ONLY*
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_ALL_PLAYER)
+    fun lookupAllPlayer(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idTeam: String
+    ): Observable<Players>
+
+    // List all users loved teams and players
+    @GET(BuildConfig.SPORTDB_URL_SEARCH_LOVES)
+    fun searchLoves(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_USER_LOVED) userName: String
+    ): Observable<Users>
 
     companion object Factory {
 

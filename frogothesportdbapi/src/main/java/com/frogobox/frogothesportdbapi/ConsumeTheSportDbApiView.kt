@@ -66,6 +66,18 @@ interface ConsumeTheSportDbApiView {
     fun searchAllSeasons(idTeam: String, sportResultCallback: SportResultCallback<Seasons>)
 
     // List all Teams in a League
-    fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
+    fun searchAllTeam(league: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List all Teams in Sportname & Country Name
+    fun searchAllTeam(sportName: String, countryName: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List All teams details in a league by Id
+    fun lookupAllTeam(idLeague: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List All players in a team by Team Id *Patreon ONLY*
+    fun lookupAllPlayer(idTeam: String, sportResultCallback: SportResultCallback<Players>)
+
+    // List all users loved teams and players
+    fun searchLoves(userName: String, sportResultCallback: SportResultCallback<Users>)
 
 }

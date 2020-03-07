@@ -31,7 +31,7 @@ android {
         // Search for team by name & short code
         buildConfigField("String", "SPORTDB_URL_SEARCH_FOR_TEAM", '"api/v1/json/{api_key}/searchteams.php"')
 
-        // Search for all players from team
+        // Search for all players from team *Patreon ONLY*
         buildConfigField("String", "SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS", '"api/v1/json/{api_key}/searchplayers.php"')
 
         // Search for players by player name & team name
@@ -59,6 +59,13 @@ android {
         buildConfigField("String", "SPORTDB_URL_SEARCH_ALL_TEAMS", '"api/v1/json/{api_key}/search_all_teams.php"')
 
         // List All teams details in a league by Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_ALL_TEAMS", '"api/v1/json/{api_key}/lookup_all_teams.php"')
+
+        // List All players in a team by Team Id *Patreon ONLY*
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_ALL_PLAYER", '"api/v1/json/{api_key}/lookup_all_players.php"')
+
+        // List all users loved teams and players
+        buildConfigField("String", "SPORTDB_URL_SEARCH_LOVES", '"api/v1/json/{api_key}/searchloves.php"')
 
         // Default Free API KEY The Sport DB API
         buildConfigField("String", "SPORTDB_API_KEY", '"1"')

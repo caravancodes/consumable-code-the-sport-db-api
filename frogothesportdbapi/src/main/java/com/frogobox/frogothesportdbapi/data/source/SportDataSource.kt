@@ -66,7 +66,19 @@ interface SportDataSource {
     fun searchAllSeasons(apiKey: String, idTeam: String, callback: GetRemoteCallback<Seasons>)
 
     // List all Teams in a League
-    fun searchAllTeamByLeague(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
+    fun searchAllTeam(apiKey: String, league: String, callback: GetRemoteCallback<Teams>)
+
+    // List all Teams in Sportname & Country Name
+    fun searchAllTeam(apiKey: String, sportName: String, countryName: String, callback: GetRemoteCallback<Teams>)
+
+    // List All teams details in a league by Id
+    fun lookupAllTeam(apiKey: String, idLeague: String, callback: GetRemoteCallback<Teams>)
+
+    // List All players in a team by Team Id *Patreon ONLY*
+    fun lookupAllPlayer(apiKey: String, idTeam: String, callback: GetRemoteCallback<Players>)
+
+    // List all users loved teams and players
+    fun searchLoves(apiKey: String, userName: String, callback: GetRemoteCallback<Users>)
 
     // Response Callback
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>

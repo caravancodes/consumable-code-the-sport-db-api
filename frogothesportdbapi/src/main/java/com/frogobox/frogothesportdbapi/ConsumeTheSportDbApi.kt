@@ -262,12 +262,12 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchAllTeamByLeague(
+    override fun searchAllTeam(
         league: String,
         sportResultCallback: SportResultCallback<Teams>
     ) {
 
-        sportRepository.searchAllTeamByLeague(
+        sportRepository.searchAllTeam(
             apiKey,
             league,
             object : SportDataSource.GetRemoteCallback<Teams> {
@@ -281,4 +281,73 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
+    override fun searchAllTeam(
+        sportName: String,
+        countryName: String,
+        sportResultCallback: SportResultCallback<Teams>
+    ) {
+        sportRepository.searchAllTeam(
+            apiKey,
+            sportName,
+            countryName,
+            object : SportDataSource.GetRemoteCallback<Teams> {
+                override fun onSuccess(data: Teams) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun lookupAllTeam(idLeague: String, sportResultCallback: SportResultCallback<Teams>) {
+
+        sportRepository.lookupAllTeam(
+            apiKey,
+            idLeague,
+            object : SportDataSource.GetRemoteCallback<Teams> {
+                override fun onSuccess(data: Teams) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+
+    }
+
+    override fun lookupAllPlayer(
+        idTeam: String,
+        sportResultCallback: SportResultCallback<Players>
+    ) {
+        sportRepository.lookupAllPlayer(
+            apiKey,
+            idTeam,
+            object : SportDataSource.GetRemoteCallback<Players> {
+                override fun onSuccess(data: Players) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun searchLoves(userName: String, sportResultCallback: SportResultCallback<Users>) {
+        sportRepository.searchLoves(
+            apiKey,
+            userName,
+            object : SportDataSource.GetRemoteCallback<Users> {
+                override fun onSuccess(data: Users) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
 }

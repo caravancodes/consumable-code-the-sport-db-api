@@ -324,13 +324,13 @@ object SportRemoteDataSource :
             })
     }
 
-    override fun searchAllTeamByLeague(
+    override fun searchAllTeam(
         apiKey: String,
         league: String,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
-            .searchAllTeamByLeague(apiKey, league)
+            .searchAllTeam(apiKey, league)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SportApiCallback<Teams>() {
@@ -347,4 +347,96 @@ object SportRemoteDataSource :
             })
     }
 
+    override fun searchAllTeam(
+        apiKey: String,
+        sportName: String,
+        countryName: String,
+        callback: SportDataSource.GetRemoteCallback<Teams>
+    ) {
+        sportApiService.getApiService
+            .searchAllTeam(apiKey, sportName, countryName)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Teams>() {
+                override fun onSuccess(model: Teams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun lookupAllTeam(
+        apiKey: String,
+        idLeague: String,
+        callback: SportDataSource.GetRemoteCallback<Teams>
+    ) {
+        sportApiService.getApiService
+            .lookupAllTeam(apiKey, idLeague)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Teams>() {
+                override fun onSuccess(model: Teams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun lookupAllPlayer(
+        apiKey: String,
+        idTeam: String,
+        callback: SportDataSource.GetRemoteCallback<Players>
+    ) {
+        sportApiService.getApiService
+            .lookupAllPlayer(apiKey, idTeam)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Players>() {
+                override fun onSuccess(model: Players) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun searchLoves(
+        apiKey: String,
+        userName: String,
+        callback: SportDataSource.GetRemoteCallback<Users>
+    ) {
+        sportApiService.getApiService
+            .searchLoves(apiKey, userName)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Users>() {
+                override fun onSuccess(model: Users) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
 }
