@@ -136,8 +136,8 @@ interface SportApiService {
 
     companion object Factory {
 
-        var isUsingChuckInterceptor = false
-        lateinit var context: Context
+        private var isUsingChuckInterceptor = false
+        private lateinit var context: Context
 
         fun usingChuckInterceptor(context: Context){
             isUsingChuckInterceptor = true

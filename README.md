@@ -1,5 +1,6 @@
 # consumable-code-the-sport-db-api By AmirIsBack
 - v1.0.1 - Development
+- Stable Version
 
 # About This Project
 Eliminates the method of retrieving json data using retrofit repeatedly. so this project has a set of functions to retrieve data without the need for fetching data using the retrofit of the API
@@ -12,6 +13,9 @@ Simple code and reusable data
 - RxJava
 - OkHttp
 - Chuck Interceptor
+
+# Documentation THE SPORT DB API
+https://www.thesportsdb.com/api.php
 
 # Function Main From This Project
 
@@ -41,7 +45,6 @@ Simple code and reusable data
 
     // Search for event by event file name
     fun searchForEventFileName(eventFileName: String, sportResultCallback: SportResultCallback<Events>)
-
 
     // List all sports
     fun getAllSports(sportResultCallback: SportResultCallback<Sports>)
@@ -93,6 +96,7 @@ Add it in your root build.gradle at the end of repositories:
 <h3>Step 2. Add the dependency</h3>
 
 	dependencies {
+	        // library consumable code the sport db api
             implementation 'com.github.amirisback:consumable-code-the-sport-db-api:$version_release'
 	}
 	

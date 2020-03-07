@@ -50,7 +50,6 @@ interface ConsumeTheSportDbApiView {
     // Search for event by event file name
     fun searchForEventFileName(eventFileName: String, sportResultCallback: SportResultCallback<Events>)
 
-
     // List all sports
     fun getAllSports(sportResultCallback: SportResultCallback<Sports>)
 
