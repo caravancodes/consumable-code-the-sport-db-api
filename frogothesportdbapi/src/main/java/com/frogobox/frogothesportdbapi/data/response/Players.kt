@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Player
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Players(val player: List<Player>)
+data class Players(var player: List<Player>)

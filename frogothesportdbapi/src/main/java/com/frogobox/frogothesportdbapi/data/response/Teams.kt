@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Team
  * com.frogobox.frogothesportdbapi.response
  *
  */
-data class Teams(val teams: List<Team>)
+data class Teams(var teams: List<Team>)

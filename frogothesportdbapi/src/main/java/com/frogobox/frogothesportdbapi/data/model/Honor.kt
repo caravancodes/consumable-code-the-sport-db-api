@@ -1,13 +1,11 @@
-package com.frogobox.frogothesportdbapi.data.response
-
-import com.frogobox.frogothesportdbapi.data.model.Country
+package com.frogobox.frogothesportdbapi.data.model
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
  * TheSportDBApi
- * Copyright (C) 26/01/2020.
+ * Copyright (C) 08/03/2020.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -16,7 +14,8 @@ import com.frogobox.frogothesportdbapi.data.model.Country
  * LinkedIn : linkedin.com/in/faisalamircs
  * -----------------------------------------
  * FrogoBox Software Industries
- * com.frogobox.frogothesportdbapi.model.response
+ * com.frogobox.frogothesportdbapi.data.model
  *
  */
-data class Countrys(var countrys: List<Country>)
+class Honor {
+}

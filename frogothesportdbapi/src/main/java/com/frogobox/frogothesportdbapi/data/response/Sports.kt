@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Sport
  * com.frogobox.frogothesportdbapi.model.response
  *
  */
-data class Sports(val sports: List<Sport>)
+data class Sports(var sports: List<Sport>)
