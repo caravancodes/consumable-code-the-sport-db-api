@@ -281,4 +281,22 @@ class SportConstDataApi {
 
     }
 
+    object User {
+        const val ID_EDIT = "idEdit"
+        const val STR_USERNAME = "strUsername"
+        const val STR_EDIT_TYPE = "strEditType"
+        const val STR_REASON = "strReason"
+        const val DATE = "date"
+        const val ID_TEAM = "idTeam"
+        const val ID_PLAYER = "idPlayer"
+        const val ID_LEAGUE = "idLeague"
+        const val ID_EVENT = "idEvent"
+        const val STR_TEAM = "strTeam"
+        const val STR_PLAYER = "strPlayer"
+        const val STR_LEAGUE = "strLeague"
+        const val STR_EVENT = "strEvent"
+        const val STR_EVENT_POSTER = "strEventPoster"
+        const val STR_PLAYER_TUMB = "strPlayerThumb"
+        const val STR_TEAM_BADGE = "strTeamBadge"
+    }
 }
