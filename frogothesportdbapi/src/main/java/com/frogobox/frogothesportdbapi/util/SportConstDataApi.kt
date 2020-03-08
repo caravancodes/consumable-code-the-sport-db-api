@@ -327,4 +327,17 @@ class SportConstDataApi {
 
     }
 
+    object Contract {
+        const val ID = "id"
+        const val ID_PLAYER = "idPlayer"
+        const val ID_TEAM = "idTeam"
+        const val STR_SPORT = "strSport"
+        const val STR_PLAYER = "strPlayer"
+        const val STR_TEAM = "strTeam"
+        const val STR_TEAM_BADGE = "strTeamBadge"
+        const val STR_YEAR_START = "strYearStart"
+        const val STR_YEAR_END = "strYearEnd"
+        const val STR_WAGE = "strWage"
+    }
+
 }
