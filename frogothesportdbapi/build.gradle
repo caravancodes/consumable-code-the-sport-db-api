@@ -67,6 +67,57 @@ android {
         // List all users loved teams and players
         buildConfigField("String", "SPORTDB_URL_SEARCH_LOVES", '"api/v1/json/{api_key}/searchloves.php"')
 
+        // League Details by Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_LEAGUE", '"api/v1/json/{api_key}/lookupleague.php"')
+
+        // Team Details by Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_TEAM", '"api/v1/json/{api_key}/lookupteam.php"')
+
+        // Player Details by Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_PLAYER", '"api/v1/json/{api_key}/lookupplayer.php"')
+
+        // Event Details by Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_EVENT", '"api/v1/json/{api_key}/lookupevent.php"')
+
+        // Player Honours by Player Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_HONOURS", '"api/v1/json/{api_key}/lookuphonors.php"')
+
+        // Player Former Teams by Player Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_FORMER_TEAM", '"api/v1/json/{api_key}/lookupformerteams.php"')
+
+        // Player Contracts by Player Id
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_CONTRACTS", '"api/v1/json/{api_key}/lookupcontracts.php"')
+
+        // Event TV by Event Id *Patreon ONLY*
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_TV", '"api/v1/json/{api_key}/lookuptv.php"')
+
+        // Lookup Table by League ID and Season
+        buildConfigField("String", "SPORTDB_URL_LOOKUP_TABLE", '"api/v1/json/{api_key}/lookuptable.php"')
+
+        // Next 5 Events by Team Id
+        buildConfigField("String", "SPORTDB_URL_EVENTS_NEXT", '"api/v1/json/{api_key}/eventsnext.php"')
+
+        // Next 15 Events by League Id
+        buildConfigField("String", "SPORTDB_URL_EVENTS_NEXT_LEAGUE", '"api/v1/json/{api_key}/eventsnextleague.php"')
+
+        // Last 5 Events by Team Id
+        buildConfigField("String", "SPORTDB_URL_EVENTS_LAST", '"api/v1/json/{api_key}/eventslast.php"')
+
+        // Last 15 Events by League Id
+        buildConfigField("String", "SPORTDB_URL_EVENTS_PAST_LEAGUE", '"api/v1/json/{api_key}/eventspastleague.php"')
+
+        // Events in a specific round by league id/round/season
+        buildConfigField("String", "SPORTDB_URL_EVENTS_ROUND", '"api/v1/json/{api_key}/eventsround.php"')
+
+        // Events on a specific day *Patreon ONLY*
+        buildConfigField("String", "SPORTDB_URL_EVENTS_DAY", '"api/v1/json/{api_key}/eventsday.php"')
+
+        // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
+        buildConfigField("String", "SPORTDB_URL_EVENTS_TV", '"api/v1/json/{api_key}/eventstv.php"')
+
+        // All events in specific league by season (Free tier limited to 200 events)
+        buildConfigField("String", "SPORTDB_URL_EVENTS_SEASONS", '"api/v1/json/{api_key}/eventsseason.php"')
+
         // Default Free API KEY The Sport DB API
         buildConfigField("String", "SPORTDB_API_KEY", '"1"')
 
@@ -83,7 +134,7 @@ android {
         buildConfigField("String", "QUERY_SPORT_NAME", '"s"')
         buildConfigField("String", "QUERY_SEASON", '"s"')
         buildConfigField("String", "QUERY_DATE", '"d"')
-        buildConfigField("String", "QUERY_ROUND", '"s"')
+        buildConfigField("String", "QUERY_ROUND", '"r"')
         buildConfigField("String", "QUERY_ID", '"id"')
         buildConfigField("String", "QUERY_USER_LOVED", '"u"')
 
