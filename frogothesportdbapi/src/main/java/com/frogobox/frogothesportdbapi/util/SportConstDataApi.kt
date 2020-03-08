@@ -313,4 +313,18 @@ class SportConstDataApi {
 
     }
 
+    object FormerTeam {
+
+        const val ID = "id"
+        const val ID_PLAYER = "idPlayer"
+        const val ID_FORMER_TEAM = "idFormerTeam"
+        const val STR_SPORT = "strSport"
+        const val STR_PLAYER = "strPlayer"
+        const val STR_FORMER_TEAM = "strFormerTeam"
+        const val STR_TEAM_BADGE = "strTeamBadge"
+        const val STR_JOINED = "strJoined"
+        const val STR_DEPARTED = "strDeparted"
+
+    }
+
 }
