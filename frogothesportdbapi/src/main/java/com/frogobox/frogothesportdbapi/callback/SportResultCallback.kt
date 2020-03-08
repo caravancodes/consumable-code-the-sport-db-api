@@ -19,7 +19,10 @@ package com.frogobox.frogothesportdbapi.callback
  */
 interface SportResultCallback<T> {
 
+    // Getting Data From API
     fun getResultData(data: T)
+
+    // Failed Meesage
     fun failedResult(statusCode: Int, errorMessage: String?)
 
 }

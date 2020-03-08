@@ -96,10 +96,10 @@ interface SportDataSource {
     fun lookupHonour(apiKey: String, idPlayer: String, callback: GetRemoteCallback<Honors>)
 
     // Player Former Teams by Player Id
-
+    fun lookupFormerTeam(apiKey: String, idPlayer: String, callback: GetRemoteCallback<FormerTeams>)
 
     // Player Contracts by Player Id
-
+    fun lookupContract(apiKey: String, idPlayer: String, callback: GetRemoteCallback<Contracts>)
 
     // Event TV by Event Id *Patreon ONLY*
 

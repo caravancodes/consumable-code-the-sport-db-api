@@ -531,4 +531,73 @@ object SportRemoteDataSource :
                 }
             })
     }
+
+    override fun lookupHonour(
+        apiKey: String,
+        idPlayer: String,
+        callback: SportDataSource.GetRemoteCallback<Honors>
+    ) {
+        sportApiService.getApiService
+            .lookupHonour(apiKey, idPlayer)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Honors>() {
+                override fun onSuccess(model: Honors) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun lookupFormerTeam(
+        apiKey: String,
+        idPlayer: String,
+        callback: SportDataSource.GetRemoteCallback<FormerTeams>
+    ) {
+        sportApiService.getApiService
+            .lookupFormerTeam(apiKey, idPlayer)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<FormerTeams>() {
+                override fun onSuccess(model: FormerTeams) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun lookupContract(
+        apiKey: String,
+        idPlayer: String,
+        callback: SportDataSource.GetRemoteCallback<Contracts>
+    ) {
+        sportApiService.getApiService
+            .lookupContract(apiKey, idPlayer)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Contracts>() {
+                override fun onSuccess(model: Contracts) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
 }

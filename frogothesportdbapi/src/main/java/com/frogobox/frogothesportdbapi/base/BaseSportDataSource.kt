@@ -18,8 +18,14 @@ package com.frogobox.frogothesportdbapi.base
  *
  */
 interface BaseSportDataSource {
+
     interface ResponseCallback<T> {
+
+        // If success fetching data from API
         fun onSuccess(data: T)
+
+        // If failed fetching data from API
         fun onFailed(statusCode: Int, errorMessage: String? = "")
     }
+
 }

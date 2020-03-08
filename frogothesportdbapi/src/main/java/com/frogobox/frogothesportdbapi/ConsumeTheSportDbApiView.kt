@@ -93,41 +93,12 @@ interface ConsumeTheSportDbApiView {
     fun lookupEvent(idEvent: String, sportResultCallback: SportResultCallback<Events>)
 
     // Player Honours by Player Id
-
+    fun lookupHonour(idPlayer: String, sportResultCallback: SportResultCallback<Honors>)
 
     // Player Former Teams by Player Id
-
+    fun lookupFormerTeam(idPlayer: String, sportResultCallback: SportResultCallback<FormerTeams>)
 
     // Player Contracts by Player Id
-
-
-    // Event TV by Event Id *Patreon ONLY*
-
-
-    // Lookup Table by League ID and Season
-
-
-    // Next 5 Events by Team Id
-
-
-    // Next 15 Events by League Id
-
-
-    // Last 5 Events by Team Id
-
-
-    // Last 15 Events by League Id
-
-
-    // Events in a specific round by league id/round/season
-
-
-    // Events on a specific day *Patreon ONLY*
-
-
-    // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
-
-
-    // All events in specific league by season (Free tier limited to 200 events)
+    fun lookupContract(idPlayer: String, sportResultCallback: SportResultCallback<Contracts>)
 
 }

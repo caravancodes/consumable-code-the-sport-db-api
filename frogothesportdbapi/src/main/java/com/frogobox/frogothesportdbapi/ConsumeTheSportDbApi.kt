@@ -413,4 +413,55 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 }
             })
     }
+
+    override fun lookupHonour(idPlayer: String, sportResultCallback: SportResultCallback<Honors>) {
+        sportRepository.lookupHonour(
+            apiKey,
+            idPlayer,
+            object : SportDataSource.GetRemoteCallback<Honors> {
+                override fun onSuccess(data: Honors) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun lookupFormerTeam(
+        idPlayer: String,
+        sportResultCallback: SportResultCallback<FormerTeams>
+    ) {
+        sportRepository.lookupFormerTeam(
+            apiKey,
+            idPlayer,
+            object : SportDataSource.GetRemoteCallback<FormerTeams> {
+                override fun onSuccess(data: FormerTeams) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun lookupContract(
+        idPlayer: String,
+        sportResultCallback: SportResultCallback<Contracts>
+    ) {
+        sportRepository.lookupContract(
+            apiKey,
+            idPlayer,
+            object : SportDataSource.GetRemoteCallback<Contracts> {
+                override fun onSuccess(data: Contracts) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
 }

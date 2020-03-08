@@ -192,42 +192,25 @@ interface SportApiService {
     ): Observable<Events>
 
     // Player Honours by Player Id
-
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_HONOURS)
+    fun lookupHonour(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idPlayer: String
+    ): Observable<Honors>
 
     // Player Former Teams by Player Id
-
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_FORMER_TEAM)
+    fun lookupFormerTeam(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idPlayer: String
+    ): Observable<FormerTeams>
 
     // Player Contracts by Player Id
-
-
-    // Event TV by Event Id *Patreon ONLY*
-
-
-    // Lookup Table by League ID and Season
-
-
-    // Next 5 Events by Team Id
-
-
-    // Next 15 Events by League Id
-
-
-    // Last 5 Events by Team Id
-
-
-    // Last 15 Events by League Id
-
-
-    // Events in a specific round by league id/round/season
-
-
-    // Events on a specific day *Patreon ONLY*
-
-
-    // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
-
-
-    // All events in specific league by season (Free tier limited to 200 events)
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_CONTRACTS)
+    fun lookupContract(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idPlayer: String
+    ): Observable<Contracts>
 
 
     companion object Factory {
