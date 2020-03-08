@@ -80,6 +80,57 @@ interface SportDataSource {
     // List all users loved teams and players
     fun searchLoves(apiKey: String, userName: String, callback: GetRemoteCallback<Users>)
 
+    // League Details by Id
+    fun lookupLeagues(apiKey: String, idLeague: String, callback: GetRemoteCallback<Leagues>)
+
+    // Team Details by Id
+    fun lookupTeam(apiKey: String, idTeam: String, callback: GetRemoteCallback<Teams>)
+
+    // Player Details by Id
+    fun lookupPlayer(apiKey: String, idPlayer: String, callback: GetRemoteCallback<Players>)
+
+    // Event Details by Id
+    fun lookupEvent(apiKey: String, idEvent: String, callback: GetRemoteCallback<Events>)
+
+    // Player Honours by Player Id
+
+
+    // Player Former Teams by Player Id
+
+
+    // Player Contracts by Player Id
+
+
+    // Event TV by Event Id *Patreon ONLY*
+
+
+    // Lookup Table by League ID and Season
+
+
+    // Next 5 Events by Team Id
+
+
+    // Next 15 Events by League Id
+
+
+    // Last 5 Events by Team Id
+
+
+    // Last 15 Events by League Id
+
+
+    // Events in a specific round by league id/round/season
+
+
+    // Events on a specific day *Patreon ONLY*
+
+
+    // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
+
+
+    // All events in specific league by season (Free tier limited to 200 events)
+
+
     // Response Callback
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
 

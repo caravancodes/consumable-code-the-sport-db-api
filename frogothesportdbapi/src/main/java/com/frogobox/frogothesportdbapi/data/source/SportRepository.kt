@@ -174,4 +174,37 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
     ) {
         remoteDataSource.searchLoves(apiKey, userName, callback)
     }
+
+    override fun lookupLeagues(
+        apiKey: String,
+        idLeague: String,
+        callback: SportDataSource.GetRemoteCallback<Leagues>
+    ) {
+        remoteDataSource.lookupLeagues(apiKey, idLeague, callback)
+    }
+
+    override fun lookupTeam(
+        apiKey: String,
+        idTeam: String,
+        callback: SportDataSource.GetRemoteCallback<Teams>
+    ) {
+        remoteDataSource.lookupTeam(apiKey, idTeam, callback)
+    }
+
+    override fun lookupPlayer(
+        apiKey: String,
+        idPlayer: String,
+        callback: SportDataSource.GetRemoteCallback<Players>
+    ) {
+        remoteDataSource.lookupPlayer(apiKey, idPlayer, callback)
+    }
+
+    override fun lookupEvent(
+        apiKey: String,
+        idEvent: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.lookupEvent(apiKey, idEvent, callback)
+    }
+
 }

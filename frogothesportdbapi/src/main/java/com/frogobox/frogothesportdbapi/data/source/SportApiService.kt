@@ -163,6 +163,73 @@ interface SportApiService {
         @Query(BuildConfig.QUERY_USER_LOVED) userName: String
     ): Observable<Users>
 
+    // League Details by Id
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_LEAGUE)
+    fun lookupLeagues(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String
+    ): Observable<Leagues>
+
+    // Team Details by Id
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_TEAM)
+    fun lookupTeam(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idTeam: String
+    ): Observable<Teams>
+
+    // Player Details by Id
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_PLAYER)
+    fun lookupPlayer(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idPlayer: String
+    ): Observable<Players>
+
+    // Event Details by Id
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_EVENT)
+    fun lookupEvent(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idEvent: String
+    ): Observable<Events>
+
+    // Player Honours by Player Id
+
+
+    // Player Former Teams by Player Id
+
+
+    // Player Contracts by Player Id
+
+
+    // Event TV by Event Id *Patreon ONLY*
+
+
+    // Lookup Table by League ID and Season
+
+
+    // Next 5 Events by Team Id
+
+
+    // Next 15 Events by League Id
+
+
+    // Last 5 Events by Team Id
+
+
+    // Last 15 Events by League Id
+
+
+    // Events in a specific round by league id/round/season
+
+
+    // Events on a specific day *Patreon ONLY*
+
+
+    // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
+
+
+    // All events in specific league by season (Free tier limited to 200 events)
+
+
     companion object Factory {
 
         private var isUsingChuckInterceptor = false
