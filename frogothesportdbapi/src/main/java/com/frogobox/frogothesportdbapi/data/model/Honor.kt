@@ -1,5 +1,15 @@
 package com.frogobox.frogothesportdbapi.data.model
 
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID_TEAM
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_HONOUR
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_SEASON
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_TEAM
+import com.google.gson.annotations.SerializedName
+
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
@@ -17,5 +27,30 @@ package com.frogobox.frogothesportdbapi.data.model
  * com.frogobox.frogothesportdbapi.data.model
  *
  */
-class Honor {
-}
+data class Honor(
+
+    @SerializedName(ID)
+    var id: String? = null,
+
+    @SerializedName(ID_PLAYER)
+    var idPlayer: String? = null,
+
+    @SerializedName(ID_TEAM)
+    var idTeam: String? = null,
+
+    @SerializedName(STR_SPORT)
+    var strSport: String? = null,
+
+    @SerializedName(STR_PLAYER)
+    var strPlayer: String? = null,
+
+    @SerializedName(STR_TEAM)
+    var strTeam: String? = null,
+
+    @SerializedName(STR_HONOUR)
+    var strHonour: String? = null,
+
+    @SerializedName(STR_SEASON)
+    var strSeason: String? = null
+
+)

@@ -299,4 +299,18 @@ class SportConstDataApi {
         const val STR_PLAYER_TUMB = "strPlayerThumb"
         const val STR_TEAM_BADGE = "strTeamBadge"
     }
+
+    object Honor {
+
+        const val ID = "id"
+        const val ID_PLAYER = "idPlayer"
+        const val ID_TEAM = "idTeam"
+        const val STR_SPORT = "strSport"
+        const val STR_PLAYER = "strPlayer"
+        const val STR_TEAM = "strTeam"
+        const val STR_HONOUR = "strHonour"
+        const val STR_SEASON = "strSeason"
+
+    }
+
 }
