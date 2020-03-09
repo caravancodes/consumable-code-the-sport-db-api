@@ -62,10 +62,64 @@ https://www.thesportsdb.com/api.php
     fun searchAllSeasons(idTeam: String, sportResultCallback: SportResultCallback<Seasons>)
 
     // List all Teams in a League
-    fun searchAllTeamByLeague(league: String, sportResultCallback: SportResultCallback<Teams>)
+    fun searchAllTeam(league: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List all Teams in Sportname & Country Name
+    fun searchAllTeam(sportName: String, countryName: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List All teams details in a league by Id
+    fun lookupAllTeam(idLeague: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // List All players in a team by Team Id *Patreon ONLY*
+    fun lookupAllPlayer(idTeam: String, sportResultCallback: SportResultCallback<Players>)
+
+    // List all users loved teams and players
+    fun searchLoves(userName: String, sportResultCallback: SportResultCallback<Users>)
+
+    // League Details by Id
+    fun lookupLeagues(idLeague: String, sportResultCallback: SportResultCallback<Leagues>)
+
+    // Team Details by Id
+    fun lookupTeam(idTeam: String, sportResultCallback: SportResultCallback<Teams>)
+
+    // Player Details by Id
+    fun lookupPlayer(idPlayer: String, sportResultCallback: SportResultCallback<Players>)
+
+    // Event Details by Id
+    fun lookupEvent(idEvent: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Player Honours by Player Id
+    fun lookupHonour(idPlayer: String, sportResultCallback: SportResultCallback<Honors>)
+
+    // Player Former Teams by Player Id
+    fun lookupFormerTeam(idPlayer: String, sportResultCallback: SportResultCallback<FormerTeams>)
+
+    // Player Contracts by Player Id
+    fun lookupContract(idPlayer: String, sportResultCallback: SportResultCallback<Contracts>)
+
+    // Lookup Table by League ID and Season
+    fun lookupTable(idLeague: String, season: String, sportResultCallback: SportResultCallback<Tables>)
+
+    // Next 5 Events by Team Id
+    fun eventsNext(idTeam: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Next 15 Events by League Id
+    fun eventsNextLeague(idLeague: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Last 5 Events by Team Id
+    fun eventsLast(idTeam: String, sportResultCallback: SportResultCallback<Results>)
+
+    // Last 15 Events by League Id
+    fun eventsPastLeague(idLeague: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Events in a specific round by league id/round/season
+    fun eventsRound(idLeague: String, round: String, season: String, sportResultCallback: SportResultCallback<Events>)
+
+    // All events in specific league by season (Free tier limited to 200 events)
+    fun eventsSeason(idLeague: String, season: String, sportResultCallback: SportResultCallback<Events>)
 
 # Android Library Version (build.gradle)
-- ext.kotlin_version = '1.3.61'
+- ext.kotlin_version = '1.3.70'
 - classpath 'com.android.tools.build:gradle:3.6.1'
 - compileSdkVersion 29
 - buildToolsVersion "29.0.3"
@@ -74,11 +128,11 @@ https://www.thesportsdb.com/api.php
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.1
+    $version_release = 1.0.2
 
 What's New??
 
-    * Adding Chuck Interceptor Control *
+    * Adding all API except PATREON Service *
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -103,7 +157,9 @@ Add it in your root build.gradle at the end of repositories:
 <h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
 
 	val consumeTheSportDbApi = ConsumeTheSportDbApi("1") // "1" is API KEY
+	
 	consumeTheSportDbApi.usingChuckInterceptor(this) // This is Code Chuck Interceptor
+	
     consumeTheSportDbApi.searchForPlayerByName(
         "Danny Welbeck",
         object : SportResultCallback<Players> {
@@ -135,3 +191,4 @@ Waiting for your contribute
 # Attention !!!
 Please enjoy and don't forget fork and give a star
 - Don't Forget Follow My Github Account
+- If you like this library, please help me / you can donate to buy patreon services
