@@ -101,4 +101,19 @@ interface ConsumeTheSportDbApiView {
     // Player Contracts by Player Id
     fun lookupContract(idPlayer: String, sportResultCallback: SportResultCallback<Contracts>)
 
+    // Lookup Table by League ID and Season
+    fun lookupTable(idLeague: String, season: String, sportResultCallback: SportResultCallback<Tables>)
+
+    // Next 5 Events by Team Id
+    fun eventsNext(idTeam: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Next 15 Events by League Id
+    fun eventsNextLeague(idLeague: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Last 5 Events by Team Id
+    fun eventsLast(idTeam: String, sportResultCallback: SportResultCallback<Results>)
+
+    // Last 15 Events by League Id
+    fun eventsPastLeague(idLeague: String, sportResultCallback: SportResultCallback<Events>)
+    
 }

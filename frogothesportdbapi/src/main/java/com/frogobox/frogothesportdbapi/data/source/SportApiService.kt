@@ -212,6 +212,42 @@ interface SportApiService {
         @Query(BuildConfig.QUERY_ID) idPlayer: String
     ): Observable<Contracts>
 
+    // Lookup Table by League ID and Season
+    @GET(BuildConfig.SPORTDB_URL_LOOKUP_TABLE)
+    fun lookupTable(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_LEAGUE_NAME) idLeague: String,
+        @Query(BuildConfig.QUERY_SEASON) season: String
+    ): Observable<Tables>
+
+    // Next 5 Events by Team Id
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_NEXT)
+    fun eventsNext(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idTeam: String
+    ): Observable<Events>
+
+    // Next 15 Events by League Id
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_NEXT_LEAGUE)
+    fun eventsNextLeague(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String
+    ): Observable<Events>
+
+    // Last 5 Events by Team Id
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_LAST)
+    fun eventsLast(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idTeam: String
+    ): Observable<Results>
+
+    // Last 15 Events by League Id
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_PAST_LEAGUE)
+    fun eventsPastLeague(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String
+    ): Observable<Events>
+
 
     companion object Factory {
 

@@ -340,4 +340,17 @@ class SportConstDataApi {
         const val STR_WAGE = "strWage"
     }
 
+    object Table {
+        const val NAME = "name"
+        const val TEAM_ID = "teamid"
+        const val PLAYED = "played"
+        const val GOALS_FOR = "goalsfor"
+        const val GOALS_AGAINST = "goalsagainst"
+        const val GOALS_DIFFERENCE = "goalsdifference"
+        const val WIN = "win"
+        const val DRAW = "draw"
+        const val LOSS = "loss"
+        const val TOTAL = "total"
+    }
+
 }

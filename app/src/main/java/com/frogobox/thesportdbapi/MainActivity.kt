@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.frogothesportdbapi.ConsumeTheSportDbApi
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
 import com.frogobox.frogothesportdbapi.data.response.Events
-import com.frogobox.frogothesportdbapi.data.response.Players
-import com.frogobox.frogothesportdbapi.data.response.Teams
+import com.frogobox.frogothesportdbapi.data.response.Results
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,25 +15,13 @@ class MainActivity : AppCompatActivity() {
 
         val consumeTheSportDbApi = ConsumeTheSportDbApi("1")
         consumeTheSportDbApi.usingChuckInterceptor(this)
-        consumeTheSportDbApi.searchForPlayer(
-            "Danny Welbeck",
-            object : SportResultCallback<Players> {
-                override fun getResultData(data: Players) {
-                    for (i in data.player.indices) {
-                        println(data.player[i].strPlayer)
-                    }
-                }
 
-                override fun failedResult(statusCode: Int, errorMessage: String?) {}
-
-            })
-
-        consumeTheSportDbApi.searchForEventFileName(
-            "English_Premier_League_2015-04-26_Arsenal_vs_Chelsea",
+        consumeTheSportDbApi.eventsNext(
+            "133602",
             object : SportResultCallback<Events> {
                 override fun getResultData(data: Events) {
-                    for (i in data.event.indices) {
-                        println(data.event[i].dateEvent)
+                    for (i in data.events.indices) {
+                        println(data.events[i].strEvent)
                     }
                 }
 

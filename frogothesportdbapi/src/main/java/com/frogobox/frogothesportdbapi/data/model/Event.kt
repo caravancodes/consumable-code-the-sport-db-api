@@ -90,7 +90,7 @@ data class Event(
     var idAPIfootball: String? = null,
 
     @SerializedName(STR_EVENT)
-    var idEvestrEventnt: String? = null,
+    var strEvent: String? = null,
 
     @SerializedName(STR_EVENT_ALTERNATE)
     var strEventAlternate: String? = null,

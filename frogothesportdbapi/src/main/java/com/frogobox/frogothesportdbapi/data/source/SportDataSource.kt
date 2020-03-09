@@ -101,25 +101,25 @@ interface SportDataSource {
     // Player Contracts by Player Id
     fun lookupContract(apiKey: String, idPlayer: String, callback: GetRemoteCallback<Contracts>)
 
-    // Event TV by Event Id *Patreon ONLY*
-
-
     // Lookup Table by League ID and Season
-
+    fun lookupTable(apiKey: String, idLeague: String, season: String, callback: GetRemoteCallback<Tables>)
 
     // Next 5 Events by Team Id
-
+    fun eventsNext(apiKey: String, idTeam: String, callback: GetRemoteCallback<Events>)
 
     // Next 15 Events by League Id
-
+    fun eventsNextLeague(apiKey: String, idLeague: String, callback: GetRemoteCallback<Events>)
 
     // Last 5 Events by Team Id
-
+    fun eventsLast(apiKey: String, idTeam: String, callback: GetRemoteCallback<Results>)
 
     // Last 15 Events by League Id
-
+    fun eventsPastLeague(apiKey: String, idLeague: String, callback: GetRemoteCallback<Events>)
 
     // Events in a specific round by league id/round/season
+
+
+    // Event TV by Event Id *Patreon ONLY*
 
 
     // Events on a specific day *Patreon ONLY*

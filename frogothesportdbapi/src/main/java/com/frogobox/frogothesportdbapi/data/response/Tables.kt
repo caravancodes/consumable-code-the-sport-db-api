@@ -1,13 +1,13 @@
 package com.frogobox.frogothesportdbapi.data.response
 
-import com.frogobox.frogothesportdbapi.data.model.Player
+import com.frogobox.frogothesportdbapi.data.model.Table
 
 /**
  * Created by Faisal Amir
  * FrogoBox Inc License
  * =========================================
  * TheSportDBApi
- * Copyright (C) 06/03/2020.
+ * Copyright (C) 09/03/2020.
  * All rights reserved
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Player
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Players(var players: List<Player>)
+data class Tables(var table: List<Table>)

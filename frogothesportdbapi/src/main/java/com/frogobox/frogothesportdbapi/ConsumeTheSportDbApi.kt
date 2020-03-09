@@ -464,4 +464,90 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 }
             })
     }
+
+    override fun lookupTable(
+        idLeague: String,
+        season: String,
+        sportResultCallback: SportResultCallback<Tables>
+    ) {
+        sportRepository.lookupTable(
+            apiKey,
+            idLeague,
+            season,
+            object : SportDataSource.GetRemoteCallback<Tables> {
+                override fun onSuccess(data: Tables) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun eventsNext(idTeam: String, sportResultCallback: SportResultCallback<Events>) {
+        sportRepository.eventsNext(
+            apiKey,
+            idTeam,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun eventsNextLeague(
+        idLeague: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.eventsNextLeague(
+            apiKey,
+            idLeague,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun eventsLast(idTeam: String, sportResultCallback: SportResultCallback<Results>) {
+        sportRepository.eventsLast(
+            apiKey,
+            idTeam,
+            object : SportDataSource.GetRemoteCallback<Results> {
+                override fun onSuccess(data: Results) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun eventsPastLeague(
+        idLeague: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.eventsPastLeague(
+            apiKey,
+            idLeague,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
 }
