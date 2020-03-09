@@ -48,7 +48,6 @@ abstract class SportApiCallback<M> : Observer<M> {
         when (e) {
             is HttpException -> {
 
-
                 var baseDao: M? = null
                 try {
                     val body = e.response()?.errorBody()

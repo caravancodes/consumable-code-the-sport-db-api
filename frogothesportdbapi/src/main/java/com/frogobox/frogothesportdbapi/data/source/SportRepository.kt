@@ -271,4 +271,23 @@ open class SportRepository(private val remoteDataSource: SportRemoteDataSource) 
     ) {
         remoteDataSource.eventsPastLeague(apiKey, idLeague, callback)
     }
+
+    override fun eventsRound(
+        apiKey: String,
+        idLeague: String,
+        round: String,
+        season: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.eventsRound(apiKey, idLeague, round, season, callback)
+    }
+
+    override fun eventsSeason(
+        apiKey: String,
+        idLeague: String,
+        season: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        remoteDataSource.eventsSeason(apiKey, idLeague, season, callback)
+    }
 }

@@ -248,6 +248,23 @@ interface SportApiService {
         @Query(BuildConfig.QUERY_ID) idLeague: String
     ): Observable<Events>
 
+    // Events in a specific round by league id/round/season
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_ROUND)
+    fun eventsRound(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String,
+        @Query(BuildConfig.QUERY_ROUND) round: String,
+        @Query(BuildConfig.QUERY_SEASON) season: String
+    ): Observable<Events>
+
+    // All events in specific league by season (Free tier limited to 200 events)
+    @GET(BuildConfig.SPORTDB_URL_EVENTS_SEASONS)
+    fun eventsSeason(
+        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
+        @Query(BuildConfig.QUERY_ID) idLeague: String,
+        @Query(BuildConfig.QUERY_SEASON) season: String
+    ): Observable<Events>
+
 
     companion object Factory {
 

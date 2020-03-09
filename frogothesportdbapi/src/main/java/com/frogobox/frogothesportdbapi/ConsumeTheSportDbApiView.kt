@@ -115,5 +115,11 @@ interface ConsumeTheSportDbApiView {
 
     // Last 15 Events by League Id
     fun eventsPastLeague(idLeague: String, sportResultCallback: SportResultCallback<Events>)
+
+    // Events in a specific round by league id/round/season
+    fun eventsRound(idLeague: String, round: String, season: String, sportResultCallback: SportResultCallback<Events>)
+
+    // All events in specific league by season (Free tier limited to 200 events)
+    fun eventsSeason(idLeague: String, season: String, sportResultCallback: SportResultCallback<Events>)
     
 }

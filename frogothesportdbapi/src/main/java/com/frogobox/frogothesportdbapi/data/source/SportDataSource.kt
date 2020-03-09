@@ -117,7 +117,10 @@ interface SportDataSource {
     fun eventsPastLeague(apiKey: String, idLeague: String, callback: GetRemoteCallback<Events>)
 
     // Events in a specific round by league id/round/season
+    fun eventsRound(apiKey: String, idLeague: String, round: String, season: String, callback: GetRemoteCallback<Events>)
 
+    // All events in specific league by season (Free tier limited to 200 events)
+    fun eventsSeason(apiKey: String, idLeague: String, season: String, callback: GetRemoteCallback<Events>)
 
     // Event TV by Event Id *Patreon ONLY*
 
@@ -127,8 +130,6 @@ interface SportDataSource {
 
     // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
 
-
-    // All events in specific league by season (Free tier limited to 200 events)
 
 
     // Response Callback

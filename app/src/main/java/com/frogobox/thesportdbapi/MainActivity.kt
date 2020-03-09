@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         val consumeTheSportDbApi = ConsumeTheSportDbApi("1")
         consumeTheSportDbApi.usingChuckInterceptor(this)
 
-        consumeTheSportDbApi.eventsNext(
-            "133602",
+        consumeTheSportDbApi.eventsSeason(
+            "4328", "1415",
             object : SportResultCallback<Events> {
                 override fun getResultData(data: Events) {
                     for (i in data.events.indices) {

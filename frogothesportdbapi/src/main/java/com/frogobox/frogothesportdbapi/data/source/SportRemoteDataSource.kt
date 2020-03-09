@@ -716,4 +716,53 @@ object SportRemoteDataSource :
                 }
             })
     }
+
+    override fun eventsRound(
+        apiKey: String,
+        idLeague: String,
+        round: String,
+        season: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        sportApiService.getApiService
+            .eventsRound(apiKey, idLeague, round, season)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Events>() {
+                override fun onSuccess(model: Events) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
+
+    override fun eventsSeason(
+        apiKey: String,
+        idLeague: String,
+        season: String,
+        callback: SportDataSource.GetRemoteCallback<Events>
+    ) {
+        sportApiService.getApiService
+            .eventsSeason(apiKey, idLeague, season)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SportApiCallback<Events>() {
+                override fun onSuccess(model: Events) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+                }
+            })
+    }
 }

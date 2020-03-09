@@ -550,4 +550,45 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 }
             })
     }
+
+    override fun eventsRound(
+        idLeague: String,
+        round: String,
+        season: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.eventsRound(apiKey,
+            idLeague,
+            round,
+            season,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
+
+    override fun eventsSeason(
+        idLeague: String,
+        season: String,
+        sportResultCallback: SportResultCallback<Events>
+    ) {
+        sportRepository.eventsSeason(
+            apiKey,
+            idLeague,
+            season,
+            object : SportDataSource.GetRemoteCallback<Events> {
+                override fun onSuccess(data: Events) {
+                    sportResultCallback.getResultData(data)
+                }
+
+                override fun onFailed(statusCode: Int, errorMessage: String?) {
+                    sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+            })
+    }
 }
