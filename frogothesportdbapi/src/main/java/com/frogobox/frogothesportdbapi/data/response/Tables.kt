@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Table
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Tables(var table: List<Table>)
+data class Tables(var table: List<Table>? = null)

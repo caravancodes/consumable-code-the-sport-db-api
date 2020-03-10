@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Player
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Players(var players: List<Player>)
+data class Players(var players: List<Player>? = null)

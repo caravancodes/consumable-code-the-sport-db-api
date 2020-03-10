@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Country
  * com.frogobox.frogothesportdbapi.model.response
  *
  */
-data class Countrys(var countrys: List<Country>)
+data class Countrys(var countrys: List<Country>? = null)

@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Event
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Results(var results: List<Event>)
+data class Results(var results: List<Event>? = null)

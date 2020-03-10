@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.League
  * com.frogobox.frogothesportdbapi.model.response
  *
  */
-data class Leagues(var leagues: List<League>)
+data class Leagues(var leagues: List<League>? = null)

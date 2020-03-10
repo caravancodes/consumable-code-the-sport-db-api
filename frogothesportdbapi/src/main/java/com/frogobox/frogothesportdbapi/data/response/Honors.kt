@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Honor
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Honors(var honors: List<Honor>)
+data class Honors(var honors: List<Honor>? = null)

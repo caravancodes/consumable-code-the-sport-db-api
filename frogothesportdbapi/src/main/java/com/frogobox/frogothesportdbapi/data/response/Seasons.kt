@@ -20,4 +20,4 @@ import com.frogobox.frogothesportdbapi.data.model.Season
  *
  */
 
-data class Seasons(var seasons: List<Season>)
+data class Seasons(var seasons: List<Season>? = null)

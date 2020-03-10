@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.FormerTeam
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class FormerTeams(var formerteams: List<FormerTeam>)
+data class FormerTeams(var formerteams: List<FormerTeam>? = null)

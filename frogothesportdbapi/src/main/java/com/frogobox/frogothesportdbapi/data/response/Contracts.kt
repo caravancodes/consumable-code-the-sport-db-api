@@ -19,4 +19,4 @@ import com.frogobox.frogothesportdbapi.data.model.Contract
  * com.frogobox.frogothesportdbapi.data.response
  *
  */
-data class Contracts(var contracts: List<Contract>)
+data class Contracts(var contracts: List<Contract>? = null)
