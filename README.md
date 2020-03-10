@@ -1,5 +1,5 @@
 # consumable-code-the-sport-db-api By AmirIsBack
-- v1.0.1 - Development
+- v1.0.3 - Development
 - Stable Version
 
 # About This Project
@@ -128,11 +128,11 @@ https://www.thesportsdb.com/api.php
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.2
+    $version_release = 1.0.3
 
 What's New??
 
-    * Adding all API except PATREON Service *
+    * Handling Null Data From API*
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
