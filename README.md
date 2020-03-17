@@ -1,5 +1,5 @@
 # consumable-code-the-sport-db-api By AmirIsBack
-- v1.0.3 - Development
+- v1.0.4 - Development
 - Stable Version
 
 # About This Project
@@ -128,11 +128,11 @@ https://www.thesportsdb.com/api.php
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.3
+    $version_release = 1.0.4
 
 What's New??
 
-    * Handling Null Data From API*
+    * Handling Progress View *
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -169,8 +169,17 @@ Add it in your root build.gradle at the end of repositories:
 
             }
 
-            override fun failedResult(statusCode: Int, errorMessage: String?) {}
+            override fun failedResult(statusCode: Int, errorMessage: String?) {
+                // failed result
+            }
 
+            override fun onShowProgress() {
+                // showing your progress view
+            }
+
+            override fun onHideProgress() {
+                // hiding your progress view
+            }
         })
 	
 
