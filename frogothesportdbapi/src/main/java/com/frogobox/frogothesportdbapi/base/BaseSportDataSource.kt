@@ -26,6 +26,13 @@ interface BaseSportDataSource {
 
         // If failed fetching data from API
         fun onFailed(statusCode: Int, errorMessage: String? = "")
+
+        // Show progress view
+        fun onShowProgress()
+
+        // Show progress view
+        fun onHideProgress()
+
     }
 
 }

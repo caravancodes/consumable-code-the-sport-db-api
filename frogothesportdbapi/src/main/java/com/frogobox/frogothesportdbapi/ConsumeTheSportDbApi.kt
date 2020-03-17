@@ -47,6 +47,15 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
+
             })
     }
 
@@ -64,6 +73,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -83,6 +100,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -100,6 +125,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -121,6 +154,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -138,6 +179,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -159,6 +208,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -178,6 +235,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
 
     }
@@ -191,6 +256,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             override fun onFailed(statusCode: Int, errorMessage: String?) {
                 sportResultCallback.failedResult(statusCode, errorMessage)
             }
+
+            override fun onShowProgress() {
+                sportResultCallback.onShowProgress()
+            }
+
+            override fun onHideProgress() {
+                sportResultCallback.onHideProgress()
+            }
         })
     }
 
@@ -202,6 +275,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
             override fun onFailed(statusCode: Int, errorMessage: String?) {
                 sportResultCallback.failedResult(statusCode, errorMessage)
+            }
+
+            override fun onShowProgress() {
+                sportResultCallback.onShowProgress()
+            }
+
+            override fun onHideProgress() {
+                sportResultCallback.onHideProgress()
             }
         })
     }
@@ -220,6 +301,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -241,6 +330,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -258,6 +355,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -278,6 +383,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -298,6 +411,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -313,6 +434,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
 
@@ -333,6 +462,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -347,6 +484,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -366,6 +511,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -380,6 +533,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -396,6 +557,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -411,6 +580,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -425,6 +602,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -444,6 +629,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -461,6 +654,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -482,6 +683,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -496,6 +705,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -515,6 +732,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -529,6 +754,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -547,6 +780,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }
@@ -569,6 +810,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
                 }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
+                }
             })
     }
 
@@ -588,6 +837,14 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
 
                 override fun onFailed(statusCode: Int, errorMessage: String?) {
                     sportResultCallback.failedResult(statusCode, errorMessage)
+                }
+
+                override fun onShowProgress() {
+                    sportResultCallback.onShowProgress()
+                }
+
+                override fun onHideProgress() {
+                    sportResultCallback.onHideProgress()
                 }
             })
     }

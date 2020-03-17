@@ -41,6 +41,8 @@ object SportRemoteDataSource :
             .searchForTeamByName(apiKey, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -64,6 +66,8 @@ object SportRemoteDataSource :
             .searchForTeamByShortCode(apiKey, shortCode)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -87,6 +91,8 @@ object SportRemoteDataSource :
             .searchForAllPlayer(apiKey, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Players>() {
                 override fun onSuccess(model: Players) {
                     callback.onSuccess(model)
@@ -110,6 +116,8 @@ object SportRemoteDataSource :
             .searchForPlayer(apiKey, playerName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Players>() {
                 override fun onSuccess(model: Players) {
                     callback.onSuccess(model)
@@ -134,6 +142,8 @@ object SportRemoteDataSource :
             .searchForPlayer(apiKey, playerName, teamName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Players>() {
                 override fun onSuccess(model: Players) {
                     callback.onSuccess(model)
@@ -157,6 +167,8 @@ object SportRemoteDataSource :
             .searchForEvent(apiKey, eventName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -181,6 +193,8 @@ object SportRemoteDataSource :
             .searchForEvent(apiKey, eventName, season)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -204,6 +218,8 @@ object SportRemoteDataSource :
             .searchForEventFileName(apiKey, eventFileName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -222,6 +238,8 @@ object SportRemoteDataSource :
         sportApiService.getApiService.getAllSports(apiKey)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Sports>() {
                 override fun onSuccess(model: Sports) {
                     callback.onSuccess(model)
@@ -243,6 +261,8 @@ object SportRemoteDataSource :
         sportApiService.getApiService.getAllLeagues(apiKey)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Leagues>() {
                 override fun onSuccess(model: Leagues) {
                     callback.onSuccess(model)
@@ -265,6 +285,8 @@ object SportRemoteDataSource :
         sportApiService.getApiService.searchAllLeagues(apiKey, countryName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Countrys>() {
                 override fun onSuccess(model: Countrys) {
                     callback.onSuccess(model)
@@ -288,6 +310,8 @@ object SportRemoteDataSource :
         sportApiService.getApiService.searchAllLeagues(apiKey, countryName, sportName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Countrys>() {
                 override fun onSuccess(model: Countrys) {
                     callback.onSuccess(model)
@@ -310,6 +334,8 @@ object SportRemoteDataSource :
         sportApiService.getApiService.searchAllSeasons(apiKey, idTeam)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Seasons>() {
                 override fun onSuccess(model: Seasons) {
                     callback.onSuccess(model)
@@ -333,6 +359,8 @@ object SportRemoteDataSource :
             .searchAllTeam(apiKey, league)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -357,6 +385,8 @@ object SportRemoteDataSource :
             .searchAllTeam(apiKey, sportName, countryName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -380,6 +410,8 @@ object SportRemoteDataSource :
             .lookupAllTeam(apiKey, idLeague)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -403,6 +435,8 @@ object SportRemoteDataSource :
             .lookupAllPlayer(apiKey, idTeam)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Players>() {
                 override fun onSuccess(model: Players) {
                     callback.onSuccess(model)
@@ -426,6 +460,8 @@ object SportRemoteDataSource :
             .searchLoves(apiKey, userName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Users>() {
                 override fun onSuccess(model: Users) {
                     callback.onSuccess(model)
@@ -449,6 +485,8 @@ object SportRemoteDataSource :
             .lookupLeagues(apiKey, idLeague)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Leagues>() {
                 override fun onSuccess(model: Leagues) {
                     callback.onSuccess(model)
@@ -472,6 +510,8 @@ object SportRemoteDataSource :
             .lookupTeam(apiKey, idTeam)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Teams>() {
                 override fun onSuccess(model: Teams) {
                     callback.onSuccess(model)
@@ -495,6 +535,8 @@ object SportRemoteDataSource :
             .lookupPlayer(apiKey, idPlayer)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Players>() {
                 override fun onSuccess(model: Players) {
                     callback.onSuccess(model)
@@ -518,6 +560,8 @@ object SportRemoteDataSource :
             .lookupEvent(apiKey, idEvent)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -541,6 +585,8 @@ object SportRemoteDataSource :
             .lookupHonour(apiKey, idPlayer)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Honors>() {
                 override fun onSuccess(model: Honors) {
                     callback.onSuccess(model)
@@ -564,6 +610,8 @@ object SportRemoteDataSource :
             .lookupFormerTeam(apiKey, idPlayer)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<FormerTeams>() {
                 override fun onSuccess(model: FormerTeams) {
                     callback.onSuccess(model)
@@ -587,6 +635,8 @@ object SportRemoteDataSource :
             .lookupContract(apiKey, idPlayer)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Contracts>() {
                 override fun onSuccess(model: Contracts) {
                     callback.onSuccess(model)
@@ -611,6 +661,8 @@ object SportRemoteDataSource :
             .lookupTable(apiKey, idLeague, season)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Tables>() {
                 override fun onSuccess(model: Tables) {
                     callback.onSuccess(model)
@@ -634,6 +686,8 @@ object SportRemoteDataSource :
             .eventsNext(apiKey, idTeam)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -657,6 +711,8 @@ object SportRemoteDataSource :
             .eventsNextLeague(apiKey, idLeague)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -680,6 +736,8 @@ object SportRemoteDataSource :
             .eventsLast(apiKey, idTeam)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Results>() {
                 override fun onSuccess(model: Results) {
                     callback.onSuccess(model)
@@ -703,6 +761,8 @@ object SportRemoteDataSource :
             .eventsPastLeague(apiKey, idLeague)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -728,6 +788,8 @@ object SportRemoteDataSource :
             .eventsRound(apiKey, idLeague, round, season)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)
@@ -752,6 +814,8 @@ object SportRemoteDataSource :
             .eventsSeason(apiKey, idLeague, season)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .subscribe(object : SportApiCallback<Events>() {
                 override fun onSuccess(model: Events) {
                     callback.onSuccess(model)

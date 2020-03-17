@@ -25,4 +25,10 @@ interface SportResultCallback<T> {
     // Failed Meesage
     fun failedResult(statusCode: Int, errorMessage: String?)
 
+    // Show progress view
+    fun onShowProgress()
+
+    // Show progress view
+    fun onHideProgress()
+
 }

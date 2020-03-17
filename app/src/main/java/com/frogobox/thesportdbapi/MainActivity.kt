@@ -30,7 +30,15 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun failedResult(statusCode: Int, errorMessage: String?) {
+                // failed result
+            }
 
+            override fun onShowProgress() {
+                // showing your progress view
+            }
+
+            override fun onHideProgress() {
+                // hiding your progress view
             }
         })
 
