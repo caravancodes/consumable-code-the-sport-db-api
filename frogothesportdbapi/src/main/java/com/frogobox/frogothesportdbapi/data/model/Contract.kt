@@ -1,15 +1,15 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.ID
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.ID_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.ID_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_SPORT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_TEAM_BADGE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_WAGE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_YEAR_END
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Contract.STR_YEAR_START
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.ID
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.ID_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.ID_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_TEAM_BADGE
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_WAGE
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_YEAR_END
+import com.frogobox.frogothesportdbapi.util.SportData.Contract.STR_YEAR_START
 import com.google.gson.annotations.SerializedName
 
 /**

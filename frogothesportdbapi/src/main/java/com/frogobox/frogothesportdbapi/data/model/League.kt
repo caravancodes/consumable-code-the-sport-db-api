@@ -1,9 +1,9 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.League.ID_LEAGUE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.League.STR_LEAGUE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.League.STR_LEAGUE_ALTERNATE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.League.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.League.ID_LEAGUE
+import com.frogobox.frogothesportdbapi.util.SportData.League.STR_LEAGUE
+import com.frogobox.frogothesportdbapi.util.SportData.League.STR_LEAGUE_ALTERNATE
+import com.frogobox.frogothesportdbapi.util.SportData.League.STR_SPORT
 import com.google.gson.annotations.SerializedName
 
 /**

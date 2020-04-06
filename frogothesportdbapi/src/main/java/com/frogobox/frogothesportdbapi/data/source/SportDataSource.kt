@@ -131,7 +131,6 @@ interface SportDataSource {
     // TV Events on a day (By Sport/Date/TV Station Country) channel (Latest) *Patreon ONLY*
 
 
-
     // Response Callback
     interface GetRemoteCallback<T> : BaseSportDataSource.ResponseCallback<T>
 

@@ -1,14 +1,14 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.ID
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.ID_FORMER_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.ID_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_DEPARTED
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_FORMER_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_JOINED
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_SPORT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.FormerTeam.STR_TEAM_BADGE
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.ID
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.ID_FORMER_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.ID_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_DEPARTED
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_FORMER_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_JOINED
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.FormerTeam.STR_TEAM_BADGE
 import com.google.gson.annotations.SerializedName
 
 /**

@@ -1,10 +1,10 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.ID_SPORT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.STR_FORMAT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.STR_SPORT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.STR_SPORT_DESCRIPTION
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Sport.STR_SPORT_THUMB
+import com.frogobox.frogothesportdbapi.util.SportData.Sport.ID_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.Sport.STR_FORMAT
+import com.frogobox.frogothesportdbapi.util.SportData.Sport.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.Sport.STR_SPORT_DESCRIPTION
+import com.frogobox.frogothesportdbapi.util.SportData.Sport.STR_SPORT_THUMB
 import com.google.gson.annotations.SerializedName
 
 /**

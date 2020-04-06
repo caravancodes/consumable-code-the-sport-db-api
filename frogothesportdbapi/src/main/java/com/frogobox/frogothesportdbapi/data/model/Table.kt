@@ -1,15 +1,15 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.DRAW
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.GOALS_AGAINST
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.GOALS_DIFFERENCE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.GOALS_FOR
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.LOSS
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.NAME
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.PLAYED
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.TEAM_ID
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.TOTAL
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Table.WIN
+import com.frogobox.frogothesportdbapi.util.SportData.Table.DRAW
+import com.frogobox.frogothesportdbapi.util.SportData.Table.GOALS_AGAINST
+import com.frogobox.frogothesportdbapi.util.SportData.Table.GOALS_DIFFERENCE
+import com.frogobox.frogothesportdbapi.util.SportData.Table.GOALS_FOR
+import com.frogobox.frogothesportdbapi.util.SportData.Table.LOSS
+import com.frogobox.frogothesportdbapi.util.SportData.Table.NAME
+import com.frogobox.frogothesportdbapi.util.SportData.Table.PLAYED
+import com.frogobox.frogothesportdbapi.util.SportData.Table.TEAM_ID
+import com.frogobox.frogothesportdbapi.util.SportData.Table.TOTAL
+import com.frogobox.frogothesportdbapi.util.SportData.Table.WIN
 import com.google.gson.annotations.SerializedName
 
 /**

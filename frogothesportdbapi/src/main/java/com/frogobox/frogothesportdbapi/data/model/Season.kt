@@ -1,6 +1,6 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Season.STR_SEASON
+import com.frogobox.frogothesportdbapi.util.SportData.Season.STR_SEASON
 import com.google.gson.annotations.SerializedName
 
 /**

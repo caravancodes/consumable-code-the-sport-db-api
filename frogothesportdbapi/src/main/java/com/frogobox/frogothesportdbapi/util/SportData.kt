@@ -18,7 +18,7 @@ package com.frogobox.frogothesportdbapi.util
  *
  */
 
-class SportConstDataApi {
+object SportData {
 
     object Sport {
         private const val URL_SPORT = "https://www.thesportsdb.com/api/v1/json/1/all_sports.php"

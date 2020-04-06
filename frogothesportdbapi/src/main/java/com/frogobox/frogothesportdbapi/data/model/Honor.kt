@@ -1,13 +1,13 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.ID_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_HONOUR
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_SEASON
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_SPORT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.Honor.STR_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.ID
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.ID_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.ID_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.STR_HONOUR
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.STR_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.STR_SEASON
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.STR_SPORT
+import com.frogobox.frogothesportdbapi.util.SportData.Honor.STR_TEAM
 import com.google.gson.annotations.SerializedName
 
 /**

@@ -1,21 +1,21 @@
 package com.frogobox.frogothesportdbapi.data.model
 
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.DATE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.ID_EDIT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.ID_EVENT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.ID_LEAGUE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.ID_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.ID_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_EDIT_TYPE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_EVENT
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_EVENT_POSTER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_LEAGUE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_PLAYER
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_PLAYER_TUMB
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_REASON
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_TEAM
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_TEAM_BADGE
-import com.frogobox.frogothesportdbapi.util.SportConstDataApi.User.STR_USERNAME
+import com.frogobox.frogothesportdbapi.util.SportData.User.DATE
+import com.frogobox.frogothesportdbapi.util.SportData.User.ID_EDIT
+import com.frogobox.frogothesportdbapi.util.SportData.User.ID_EVENT
+import com.frogobox.frogothesportdbapi.util.SportData.User.ID_LEAGUE
+import com.frogobox.frogothesportdbapi.util.SportData.User.ID_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.User.ID_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_EDIT_TYPE
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_EVENT
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_EVENT_POSTER
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_LEAGUE
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_PLAYER
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_PLAYER_TUMB
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_REASON
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_TEAM
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_TEAM_BADGE
+import com.frogobox.frogothesportdbapi.util.SportData.User.STR_USERNAME
 import com.google.gson.annotations.SerializedName
 
 /**

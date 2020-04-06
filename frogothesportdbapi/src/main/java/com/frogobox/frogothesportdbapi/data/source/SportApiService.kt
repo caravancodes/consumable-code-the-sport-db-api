@@ -1,8 +1,9 @@
 package com.frogobox.frogothesportdbapi.data.source
 
 import android.content.Context
-import com.frogobox.frogothesportdbapi.BuildConfig
 import com.frogobox.frogothesportdbapi.data.response.*
+import com.frogobox.frogothesportdbapi.util.SportConstant
+import com.frogobox.frogothesportdbapi.util.SportUrl
 import com.readystatesoftware.chuck.ChuckInterceptor
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
@@ -36,233 +37,233 @@ import java.util.concurrent.TimeUnit
 interface SportApiService {
 
     // Search for team by name
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
+    @GET(SportUrl.SEARCH_FOR_TEAM)
     fun searchForTeamByName(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_TEAM_NAME) teamName: String
     ): Observable<Teams>
 
     // Search for team short code
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_TEAM)
+    @GET(SportUrl.SEARCH_FOR_TEAM)
     fun searchForTeamByShortCode(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_SHORT_CODE_NAME) shortCode: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_SHORT_CODE_NAME) shortCode: String
     ): Observable<Teams>
 
     // Search for all players from team *Patreon ONLY*
-    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    @GET(SportUrl.PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
     fun searchForAllPlayer(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_TEAM_NAME) teamName: String
     ): Observable<Players>
 
     // Search for players by player name
-    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    @GET(SportUrl.PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
     fun searchForPlayer(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_PLAYER_NAME) playerName: String
     ): Observable<Players>
 
     // Search for players by player name and team name
-    @GET(BuildConfig.SPORTDB_URL_PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
+    @GET(SportUrl.PATREON_SEARCH_FOR_ALL_PLAYERS_FROM_TEAMS)
     fun searchForPlayer(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_PLAYER_NAME) playerName: String,
-        @Query(BuildConfig.QUERY_TEAM_NAME) teamName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_PLAYER_NAME) playerName: String,
+        @Query(SportConstant.QUERY_TEAM_NAME) teamName: String
     ): Observable<Players>
 
     // Search for event by event name
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT)
+    @GET(SportUrl.SEARCH_FOR_EVENT)
     fun searchForEvent(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_EVENT_NAME) eventName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_EVENT_NAME) eventName: String
     ): Observable<Events>
 
     // Search For event by event name and season
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT)
+    @GET(SportUrl.SEARCH_FOR_EVENT)
     fun searchForEvent(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_EVENT_NAME) eventName: String,
-        @Query(BuildConfig.QUERY_SEASON) season: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_EVENT_NAME) eventName: String,
+        @Query(SportConstant.QUERY_SEASON) season: String
     ): Observable<Events>
 
     // Search for event by event file name
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_FOR_EVENT_FILE_NAME)
+    @GET(SportUrl.SEARCH_FOR_EVENT_FILE_NAME)
     fun searchForEventFileName(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_EVENT_NAME) eventFileName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_EVENT_NAME) eventFileName: String
     ): Observable<Events>
 
     // List all sports
-    @GET(BuildConfig.SPORTDB_URL_GET_ALL_SPORTS)
+    @GET(SportUrl.GET_ALL_SPORTS)
     fun getAllSports(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String
     ): Observable<Sports>
 
     // List all leagues
-    @GET(BuildConfig.SPORTDB_URL_GET_ALL_LEAGUES)
+    @GET(SportUrl.GET_ALL_LEAGUES)
     fun getAllLeagues(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String
     ): Observable<Leagues>
 
     // List all Leagues in a country
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_LEAGUES)
+    @GET(SportUrl.SEARCH_ALL_LEAGUES)
     fun searchAllLeagues(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_COUNTRY_NAME) countryName: String
     ): Observable<Countrys>
 
     // List all Leagues in a country specific by sport
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_LEAGUES)
+    @GET(SportUrl.SEARCH_ALL_LEAGUES)
     fun searchAllLeagues(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String,
-        @Query(BuildConfig.QUERY_SPORT_NAME) sportName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_COUNTRY_NAME) countryName: String,
+        @Query(SportConstant.QUERY_SPORT_NAME) sportName: String
     ): Observable<Countrys>
 
     // List all Seasons in a League
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_SEASONS)
+    @GET(SportUrl.SEARCH_ALL_SEASONS)
     fun searchAllSeasons(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idTeam: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idTeam: String
     ): Observable<Seasons>
 
     // List all Teams in a League
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
+    @GET(SportUrl.SEARCH_ALL_TEAMS)
     fun searchAllTeam(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_LEAGUE_NAME) league: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_LEAGUE_NAME) league: String
     ): Observable<Teams>
 
     // List all Teams in Sport and Country
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_ALL_TEAMS)
+    @GET(SportUrl.SEARCH_ALL_TEAMS)
     fun searchAllTeam(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_SPORT_NAME) sportName: String,
-        @Query(BuildConfig.QUERY_COUNTRY_NAME) countryName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_SPORT_NAME) sportName: String,
+        @Query(SportConstant.QUERY_COUNTRY_NAME) countryName: String
     ): Observable<Teams>
 
     // List All teams details in a league by Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_ALL_TEAMS)
+    @GET(SportUrl.LOOKUP_ALL_TEAMS)
     fun lookupAllTeam(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String
     ): Observable<Teams>
 
     // List All players in a team by Team Id *Patreon ONLY*
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_ALL_PLAYER)
+    @GET(SportUrl.LOOKUP_ALL_PLAYER)
     fun lookupAllPlayer(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idTeam: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idTeam: String
     ): Observable<Players>
 
     // List all users loved teams and players
-    @GET(BuildConfig.SPORTDB_URL_SEARCH_LOVES)
+    @GET(SportUrl.SEARCH_LOVES)
     fun searchLoves(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_USER_LOVED) userName: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_USER_LOVED) userName: String
     ): Observable<Users>
 
     // League Details by Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_LEAGUE)
+    @GET(SportUrl.LOOKUP_LEAGUE)
     fun lookupLeagues(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String
     ): Observable<Leagues>
 
     // Team Details by Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_TEAM)
+    @GET(SportUrl.LOOKUP_TEAM)
     fun lookupTeam(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idTeam: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idTeam: String
     ): Observable<Teams>
 
     // Player Details by Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_PLAYER)
+    @GET(SportUrl.LOOKUP_PLAYER)
     fun lookupPlayer(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idPlayer: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idPlayer: String
     ): Observable<Players>
 
     // Event Details by Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_EVENT)
+    @GET(SportUrl.LOOKUP_EVENT)
     fun lookupEvent(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idEvent: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idEvent: String
     ): Observable<Events>
 
     // Player Honours by Player Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_HONOURS)
+    @GET(SportUrl.LOOKUP_HONOURS)
     fun lookupHonour(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idPlayer: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idPlayer: String
     ): Observable<Honors>
 
     // Player Former Teams by Player Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_FORMER_TEAM)
+    @GET(SportUrl.LOOKUP_FORMER_TEAM)
     fun lookupFormerTeam(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idPlayer: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idPlayer: String
     ): Observable<FormerTeams>
 
     // Player Contracts by Player Id
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_CONTRACTS)
+    @GET(SportUrl.LOOKUP_CONTRACTS)
     fun lookupContract(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idPlayer: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idPlayer: String
     ): Observable<Contracts>
 
     // Lookup Table by League ID and Season
-    @GET(BuildConfig.SPORTDB_URL_LOOKUP_TABLE)
+    @GET(SportUrl.LOOKUP_TABLE)
     fun lookupTable(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_LEAGUE_NAME) idLeague: String,
-        @Query(BuildConfig.QUERY_SEASON) season: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_LEAGUE_NAME) idLeague: String,
+        @Query(SportConstant.QUERY_SEASON) season: String
     ): Observable<Tables>
 
     // Next 5 Events by Team Id
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_NEXT)
+    @GET(SportUrl.EVENTS_NEXT)
     fun eventsNext(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idTeam: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idTeam: String
     ): Observable<Events>
 
     // Next 15 Events by League Id
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_NEXT_LEAGUE)
+    @GET(SportUrl.EVENTS_NEXT_LEAGUE)
     fun eventsNextLeague(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String
     ): Observable<Events>
 
     // Last 5 Events by Team Id
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_LAST)
+    @GET(SportUrl.EVENTS_LAST)
     fun eventsLast(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idTeam: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idTeam: String
     ): Observable<Results>
 
     // Last 15 Events by League Id
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_PAST_LEAGUE)
+    @GET(SportUrl.EVENTS_PAST_LEAGUE)
     fun eventsPastLeague(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String
     ): Observable<Events>
 
     // Events in a specific round by league id/round/season
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_ROUND)
+    @GET(SportUrl.EVENTS_ROUND)
     fun eventsRound(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String,
-        @Query(BuildConfig.QUERY_ROUND) round: String,
-        @Query(BuildConfig.QUERY_SEASON) season: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String,
+        @Query(SportConstant.QUERY_ROUND) round: String,
+        @Query(SportConstant.QUERY_SEASON) season: String
     ): Observable<Events>
 
     // All events in specific league by season (Free tier limited to 200 events)
-    @GET(BuildConfig.SPORTDB_URL_EVENTS_SEASONS)
+    @GET(SportUrl.EVENTS_SEASONS)
     fun eventsSeason(
-        @Path(BuildConfig.PATH_API_KEY) apiKey: String,
-        @Query(BuildConfig.QUERY_ID) idLeague: String,
-        @Query(BuildConfig.QUERY_SEASON) season: String
+        @Path(SportConstant.PATH_API_KEY) apiKey: String,
+        @Query(SportConstant.QUERY_ID) idLeague: String,
+        @Query(SportConstant.QUERY_SEASON) season: String
     ): Observable<Events>
 
 
@@ -271,7 +272,7 @@ interface SportApiService {
         private var isUsingChuckInterceptor = false
         private lateinit var context: Context
 
-        fun usingChuckInterceptor(context: Context){
+        fun usingChuckInterceptor(context: Context) {
             isUsingChuckInterceptor = true
             this.context = context
         }
@@ -295,7 +296,7 @@ interface SportApiService {
             }
 
             val mRetrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.SPORTDB_BASE_URL)
+                .baseUrl(SportUrl.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(mClient)
