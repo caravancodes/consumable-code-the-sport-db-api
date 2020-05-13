@@ -1,5 +1,5 @@
 # consumable-code-the-sport-db-api By AmirIsBack
-- v1.0.5 - Development
+- v1.0.6 - Development
 - Stable Version
 
 # About This Project
@@ -8,14 +8,19 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 # Special From This Project
 Simple code and reusable data
 
+# Screenshoot Apps
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span>
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_1.png"></span>
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_2.png"></span>
+
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.5
+    $version_release = 1.0.6
 
 What's New??
 
-    * Change Constant And Url *
+    * Adding sample code, update build.gradle *
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -34,7 +39,7 @@ Add it in your root build.gradle at the end of repositories:
 
 	dependencies {
 	        // library consumable code the sport db api
-            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.0.5'
+            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.0.6'
 	}
 	
 <h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
