@@ -34,7 +34,7 @@ object SportRemoteDataSource :
 
     override fun searchForTeamByName(
         apiKey: String,
-        teamName: String,
+        teamName: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -59,7 +59,7 @@ object SportRemoteDataSource :
 
     override fun searchForTeamByShortCode(
         apiKey: String,
-        shortCode: String,
+        shortCode: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -84,7 +84,7 @@ object SportRemoteDataSource :
 
     override fun searchForAllPlayer(
         apiKey: String,
-        teamName: String,
+        teamName: String?,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
@@ -109,7 +109,7 @@ object SportRemoteDataSource :
 
     override fun searchForPlayer(
         apiKey: String,
-        playerName: String,
+        playerName: String?,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
@@ -134,8 +134,8 @@ object SportRemoteDataSource :
 
     override fun searchForPlayer(
         apiKey: String,
-        playerName: String,
-        teamName: String,
+        playerName: String?,
+        teamName: String?,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
@@ -160,7 +160,7 @@ object SportRemoteDataSource :
 
     override fun searchForEvent(
         apiKey: String,
-        eventName: String,
+        eventName: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -185,8 +185,8 @@ object SportRemoteDataSource :
 
     override fun searchForEvent(
         apiKey: String,
-        eventName: String,
-        season: String,
+        eventName: String?,
+        season: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -211,7 +211,7 @@ object SportRemoteDataSource :
 
     override fun searchForEventFileName(
         apiKey: String,
-        eventFileName: String,
+        eventFileName: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -279,7 +279,7 @@ object SportRemoteDataSource :
 
     override fun searchAllLeagues(
         apiKey: String,
-        countryName: String,
+        countryName: String?,
         callback: SportDataSource.GetRemoteCallback<Countrys>
     ) {
         sportApiService.getApiService.searchAllLeagues(apiKey, countryName)
@@ -303,8 +303,8 @@ object SportRemoteDataSource :
 
     override fun searchAllLeagues(
         apiKey: String,
-        countryName: String,
-        sportName: String,
+        countryName: String?,
+        sportName: String?,
         callback: SportDataSource.GetRemoteCallback<Countrys>
     ) {
         sportApiService.getApiService.searchAllLeagues(apiKey, countryName, sportName)
@@ -328,7 +328,7 @@ object SportRemoteDataSource :
 
     override fun searchAllSeasons(
         apiKey: String,
-        idTeam: String,
+        idTeam: String?,
         callback: SportDataSource.GetRemoteCallback<Seasons>
     ) {
         sportApiService.getApiService.searchAllSeasons(apiKey, idTeam)
@@ -352,7 +352,7 @@ object SportRemoteDataSource :
 
     override fun searchAllTeam(
         apiKey: String,
-        league: String,
+        league: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -377,8 +377,8 @@ object SportRemoteDataSource :
 
     override fun searchAllTeam(
         apiKey: String,
-        sportName: String,
-        countryName: String,
+        sportName: String?,
+        countryName: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -403,7 +403,7 @@ object SportRemoteDataSource :
 
     override fun lookupAllTeam(
         apiKey: String,
-        idLeague: String,
+        idLeague: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -428,7 +428,7 @@ object SportRemoteDataSource :
 
     override fun lookupAllPlayer(
         apiKey: String,
-        idTeam: String,
+        idTeam: String?,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
@@ -453,7 +453,7 @@ object SportRemoteDataSource :
 
     override fun searchLoves(
         apiKey: String,
-        userName: String,
+        userName: String?,
         callback: SportDataSource.GetRemoteCallback<Users>
     ) {
         sportApiService.getApiService
@@ -478,7 +478,7 @@ object SportRemoteDataSource :
 
     override fun lookupLeagues(
         apiKey: String,
-        idLeague: String,
+        idLeague: String?,
         callback: SportDataSource.GetRemoteCallback<Leagues>
     ) {
         sportApiService.getApiService
@@ -503,7 +503,7 @@ object SportRemoteDataSource :
 
     override fun lookupTeam(
         apiKey: String,
-        idTeam: String,
+        idTeam: String?,
         callback: SportDataSource.GetRemoteCallback<Teams>
     ) {
         sportApiService.getApiService
@@ -528,7 +528,7 @@ object SportRemoteDataSource :
 
     override fun lookupPlayer(
         apiKey: String,
-        idPlayer: String,
+        idPlayer: String?,
         callback: SportDataSource.GetRemoteCallback<Players>
     ) {
         sportApiService.getApiService
@@ -553,7 +553,7 @@ object SportRemoteDataSource :
 
     override fun lookupEvent(
         apiKey: String,
-        idEvent: String,
+        idEvent: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -578,7 +578,7 @@ object SportRemoteDataSource :
 
     override fun lookupHonour(
         apiKey: String,
-        idPlayer: String,
+        idPlayer: String?,
         callback: SportDataSource.GetRemoteCallback<Honors>
     ) {
         sportApiService.getApiService
@@ -603,7 +603,7 @@ object SportRemoteDataSource :
 
     override fun lookupFormerTeam(
         apiKey: String,
-        idPlayer: String,
+        idPlayer: String?,
         callback: SportDataSource.GetRemoteCallback<FormerTeams>
     ) {
         sportApiService.getApiService
@@ -628,7 +628,7 @@ object SportRemoteDataSource :
 
     override fun lookupContract(
         apiKey: String,
-        idPlayer: String,
+        idPlayer: String?,
         callback: SportDataSource.GetRemoteCallback<Contracts>
     ) {
         sportApiService.getApiService
@@ -653,8 +653,8 @@ object SportRemoteDataSource :
 
     override fun lookupTable(
         apiKey: String,
-        idLeague: String,
-        season: String,
+        idLeague: String?,
+        season: String?,
         callback: SportDataSource.GetRemoteCallback<Tables>
     ) {
         sportApiService.getApiService
@@ -679,7 +679,7 @@ object SportRemoteDataSource :
 
     override fun eventsNext(
         apiKey: String,
-        idTeam: String,
+        idTeam: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -704,7 +704,7 @@ object SportRemoteDataSource :
 
     override fun eventsNextLeague(
         apiKey: String,
-        idLeague: String,
+        idLeague: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -729,7 +729,7 @@ object SportRemoteDataSource :
 
     override fun eventsLast(
         apiKey: String,
-        idTeam: String,
+        idTeam: String?,
         callback: SportDataSource.GetRemoteCallback<Results>
     ) {
         sportApiService.getApiService
@@ -754,7 +754,7 @@ object SportRemoteDataSource :
 
     override fun eventsPastLeague(
         apiKey: String,
-        idLeague: String,
+        idLeague: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -779,9 +779,9 @@ object SportRemoteDataSource :
 
     override fun eventsRound(
         apiKey: String,
-        idLeague: String,
-        round: String,
-        season: String,
+        idLeague: String?,
+        round: String?,
+        season: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService
@@ -806,8 +806,8 @@ object SportRemoteDataSource :
 
     override fun eventsSeason(
         apiKey: String,
-        idLeague: String,
-        season: String,
+        idLeague: String?,
+        season: String?,
         callback: SportDataSource.GetRemoteCallback<Events>
     ) {
         sportApiService.getApiService

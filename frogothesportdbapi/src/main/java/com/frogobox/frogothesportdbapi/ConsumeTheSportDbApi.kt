@@ -33,7 +33,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForTeamByName(
-        teamName: String,
+        teamName: String?,
         sportResultCallback: SportResultCallback<Teams>
     ) {
         sportRepository.searchForTeamByName(
@@ -60,7 +60,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForTeamByShortCode(
-        shortCode: String,
+        shortCode: String?,
         sportResultCallback: SportResultCallback<Teams>
     ) {
         sportRepository.searchForTeamByShortCode(
@@ -86,7 +86,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForAllPlayer(
-        teamName: String,
+        teamName: String?,
         sportResultCallback: SportResultCallback<Players>
     ) {
         sportRepository.searchForAllPlayer(
@@ -112,7 +112,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForPlayer(
-        playerName: String,
+        playerName: String?,
         sportResultCallback: SportResultCallback<Players>
     ) {
         sportRepository.searchForPlayer(
@@ -138,8 +138,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForPlayer(
-        playerName: String,
-        teamName: String,
+        playerName: String?,
+        teamName: String?,
         sportResultCallback: SportResultCallback<Players>
     ) {
         sportRepository.searchForPlayer(
@@ -166,7 +166,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForEvent(
-        eventName: String,
+        eventName: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.searchForEvent(
@@ -192,8 +192,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForEvent(
-        eventName: String,
-        season: String,
+        eventName: String?,
+        season: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.searchForEvent(
@@ -220,7 +220,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchForEventFileName(
-        eventFileName: String,
+        eventFileName: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
 
@@ -288,7 +288,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchAllLeagues(
-        countryName: String,
+        countryName: String?,
         sportResultCallback: SportResultCallback<Countrys>
     ) {
         sportRepository.searchAllLeagues(
@@ -314,8 +314,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchAllLeagues(
-        countryName: String,
-        sportName: String,
+        countryName: String?,
+        sportName: String?,
         sportResultCallback: SportResultCallback<Countrys>
     ) {
         sportRepository.searchAllLeagues(
@@ -342,7 +342,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchAllSeasons(
-        idTeam: String,
+        idTeam: String?,
         sportResultCallback: SportResultCallback<Seasons>
     ) {
         sportRepository.searchAllSeasons(
@@ -368,7 +368,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchAllTeam(
-        league: String,
+        league: String?,
         sportResultCallback: SportResultCallback<Teams>
     ) {
 
@@ -395,8 +395,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun searchAllTeam(
-        sportName: String,
-        countryName: String,
+        sportName: String?,
+        countryName: String?,
         sportResultCallback: SportResultCallback<Teams>
     ) {
         sportRepository.searchAllTeam(
@@ -422,7 +422,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun lookupAllTeam(idLeague: String, sportResultCallback: SportResultCallback<Teams>) {
+    override fun lookupAllTeam(idLeague: String?, sportResultCallback: SportResultCallback<Teams>) {
 
         sportRepository.lookupAllTeam(
             apiKey,
@@ -448,7 +448,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun lookupAllPlayer(
-        idTeam: String,
+        idTeam: String?,
         sportResultCallback: SportResultCallback<Players>
     ) {
         sportRepository.lookupAllPlayer(
@@ -473,7 +473,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun searchLoves(userName: String, sportResultCallback: SportResultCallback<Users>) {
+    override fun searchLoves(userName: String?, sportResultCallback: SportResultCallback<Users>) {
         sportRepository.searchLoves(
             apiKey,
             userName,
@@ -497,7 +497,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun lookupLeagues(
-        idLeague: String,
+        idLeague: String?,
         sportResultCallback: SportResultCallback<Leagues>
     ) {
         sportRepository.lookupLeagues(
@@ -522,7 +522,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun lookupTeam(idTeam: String, sportResultCallback: SportResultCallback<Teams>) {
+    override fun lookupTeam(idTeam: String?, sportResultCallback: SportResultCallback<Teams>) {
         sportRepository.lookupTeam(
             apiKey,
             idTeam,
@@ -545,7 +545,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun lookupPlayer(idPlayer: String, sportResultCallback: SportResultCallback<Players>) {
+    override fun lookupPlayer(idPlayer: String?, sportResultCallback: SportResultCallback<Players>) {
         sportRepository.lookupPlayer(
             apiKey,
             idPlayer,
@@ -568,7 +568,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun lookupEvent(idEvent: String, sportResultCallback: SportResultCallback<Events>) {
+    override fun lookupEvent(idEvent: String?, sportResultCallback: SportResultCallback<Events>) {
         sportRepository.lookupEvent(
             apiKey,
             idEvent,
@@ -591,7 +591,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun lookupHonour(idPlayer: String, sportResultCallback: SportResultCallback<Honors>) {
+    override fun lookupHonour(idPlayer: String?, sportResultCallback: SportResultCallback<Honors>) {
         sportRepository.lookupHonour(
             apiKey,
             idPlayer,
@@ -615,7 +615,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun lookupFormerTeam(
-        idPlayer: String,
+        idPlayer: String?,
         sportResultCallback: SportResultCallback<FormerTeams>
     ) {
         sportRepository.lookupFormerTeam(
@@ -641,7 +641,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun lookupContract(
-        idPlayer: String,
+        idPlayer: String?,
         sportResultCallback: SportResultCallback<Contracts>
     ) {
         sportRepository.lookupContract(
@@ -667,8 +667,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun lookupTable(
-        idLeague: String,
-        season: String,
+        idLeague: String?,
+        season: String?,
         sportResultCallback: SportResultCallback<Tables>
     ) {
         sportRepository.lookupTable(
@@ -694,7 +694,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun eventsNext(idTeam: String, sportResultCallback: SportResultCallback<Events>) {
+    override fun eventsNext(idTeam: String?, sportResultCallback: SportResultCallback<Events>) {
         sportRepository.eventsNext(
             apiKey,
             idTeam,
@@ -718,7 +718,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun eventsNextLeague(
-        idLeague: String,
+        idLeague: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.eventsNextLeague(
@@ -743,7 +743,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
             })
     }
 
-    override fun eventsLast(idTeam: String, sportResultCallback: SportResultCallback<Results>) {
+    override fun eventsLast(idTeam: String?, sportResultCallback: SportResultCallback<Results>) {
         sportRepository.eventsLast(
             apiKey,
             idTeam,
@@ -767,7 +767,7 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun eventsPastLeague(
-        idLeague: String,
+        idLeague: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.eventsPastLeague(
@@ -793,9 +793,9 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun eventsRound(
-        idLeague: String,
-        round: String,
-        season: String,
+        idLeague: String?,
+        round: String?,
+        season: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.eventsRound(apiKey,
@@ -822,8 +822,8 @@ class ConsumeTheSportDbApi(private val apiKey: String) : ConsumeTheSportDbApiVie
     }
 
     override fun eventsSeason(
-        idLeague: String,
-        season: String,
+        idLeague: String?,
+        season: String?,
         sportResultCallback: SportResultCallback<Events>
     ) {
         sportRepository.eventsSeason(
