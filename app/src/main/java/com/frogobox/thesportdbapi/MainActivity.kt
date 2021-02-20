@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.frogobox.frogothesportdbapi.ConsumeTheSportDbApi
 import com.frogobox.frogothesportdbapi.callback.SportResultCallback
-import com.frogobox.frogothesportdbapi.data.model.FormerTeam
 import com.frogobox.frogothesportdbapi.data.model.Team
-import com.frogobox.frogothesportdbapi.data.response.FormerTeams
 import com.frogobox.frogothesportdbapi.data.response.Teams
-import com.frogobox.recycler.boilerplate.viewrclass.FrogoViewAdapterCallback
+import com.frogobox.recycler.core.IFrogoViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -57,18 +55,18 @@ class MainActivity : AppCompatActivity() {
     private fun setupFrogoRecyclerView(data: List<Team>) {
         frogorecyclerview.injector<Team>()
             .addData(data)
-            .addCustomView(R.layout.frogo_rv_grid_type_14)
+            .addCustomView(R.layout.frogo_rv_grid_type_3)
             .addEmptyView(null)
-            .addCallback(object : FrogoViewAdapterCallback<Team> {
+            .addCallback(object : IFrogoViewAdapter<Team> {
                 override fun onItemClicked(data: Team) {}
 
                 override fun onItemLongClicked(data: Team) {}
 
                 override fun setupInitComponent(view: View, data: Team) {
-                    val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_type_14_tv_title)
-                    val tvSubTitle = view.findViewById<TextView>(R.id.frogo_rv_type_14_tv_subtitle)
-                    val tvDescription = view.findViewById<TextView>(R.id.frogo_rv_type_14_tv_description)
-                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_type_14_iv_poster)
+                    val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_title)
+                    val tvSubTitle = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_subtitle)
+                    val tvDescription = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_desc)
+                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_grid_type_3_frogo_dummy_content_description)
 
                     tvTitle.text = data.strTeam
                     tvSubTitle.text = data.strAlternate
