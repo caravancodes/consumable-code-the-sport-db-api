@@ -1,5 +1,5 @@
 # consumable-code-the-sport-db-api
-[![](https://jitpack.io/v/amirisback/consumable-code-the-sport-db-api.svg?style=flat-square)](https://jitpack.io/#amirisback/consumable-code-the-sport-db-api)
+[![](https://jitpack.io/v/amirisback/consumable-code-the-sport-db-api.svg?style=flat-square)](https://jitpack.io/#amirisback/consumable-code-the-sport-db-api) <br>
 Eliminates the method of retrieving json data using retrofit repeatedly. so this project has a set of functions to retrieve data without the need for fetching data using the retrofit of the API
 
 # Screenshoot Apps
