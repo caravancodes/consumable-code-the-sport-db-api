@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -19,6 +18,10 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     compileSdkVersion 30
@@ -56,10 +59,10 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     // library frogo-recycler-view
-    implementation 'com.github.amirisback:frogo-recycler-view:3.4.0'
+    implementation 'com.github.amirisback:frogo-recycler-view:3.5.0'
 
     // library frogo-ui-kit
-    implementation 'com.github.amirisback:frogo-ui-kit:1.0.4'
+    implementation 'com.github.amirisback:frogo-ui-kit:1.0.5'
 
     implementation project(':frogothesportdbapi')
 
