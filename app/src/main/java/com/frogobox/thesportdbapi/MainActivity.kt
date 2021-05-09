@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                     val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_title)
                     val tvSubTitle = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_subtitle)
                     val tvDescription = view.findViewById<TextView>(R.id.frogo_rv_grid_type_3_tv_desc)
-                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_grid_type_3_frogo_dummy_content_description)
+                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_grid_type_3_iv_poster)
 
                     tvTitle.text = data.strTeam
                     tvSubTitle.text = data.strAlternate

@@ -56,14 +56,14 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     // library frogo-recycler-view
-    implementation 'com.github.amirisback:frogo-recycler-view:3.3.2'
+    implementation 'com.github.amirisback:frogo-recycler-view:3.4.0'
 
     // library frogo-ui-kit
-    implementation 'com.github.amirisback:frogo-ui-kit:1.0.3'
+    implementation 'com.github.amirisback:frogo-ui-kit:1.0.4'
 
     implementation project(':frogothesportdbapi')
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
