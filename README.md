@@ -1,22 +1,26 @@
-# consumable-code-the-sport-db-api
+## consumable-code-the-sport-db-api
 [![](https://jitpack.io/v/amirisback/consumable-code-the-sport-db-api.svg?style=flat-square)](https://jitpack.io/#amirisback/consumable-code-the-sport-db-api) <br>
 Eliminates the method of retrieving json data using retrofit repeatedly. so this project has a set of functions to retrieve data without the need for fetching data using the retrofit of the API
 
-# Screenshoot Apps
-<span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span>
-<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_1.png"></span>
-<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_2.png"></span>
+## Screenshoot Apps
 
-# Version Release
+| The Sport DB API |   Chuck Data 1              |   Chuck Data 2  |
+|:------------------:|:----------------------------:|:---------------------:|
+|<span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span> | <span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_1.png"></span> | <span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_2.png"></span>
+
+## Version Release
 This Is Latest Release
 
-    $version_release = 1.0.8
+    $version_release = 1.1.0
 
 What's New??
 
-    * update build.gradle *
+    * Update build.gradle *
+    * Fixing Bug *
+    * Enhance Performance *
+    * Remove Kotlin Android Extension *
 
-# How To Use This Project
+## How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
 
 Add it in your root build.gradle at the end of repositories:
@@ -33,7 +37,7 @@ Add it in your root build.gradle at the end of repositories:
 
 	dependencies {
 	        // library consumable code the sport db api
-            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.0.8'
+            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.1.0'
 	}
 	
 <h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
@@ -64,10 +68,10 @@ Add it in your root build.gradle at the end of repositories:
             }
         })
 
-# Documentation THE SPORT DB API
+## Documentation THE SPORT DB API
 https://www.thesportsdb.com/api.php
 
-# Function Main From This Project
+## Function Main From This Project
 
     // Switch For Using Chuck Interceptor
     fun usingChuckInterceptor(context: Context)
@@ -168,14 +172,8 @@ https://www.thesportsdb.com/api.php
     // All events in specific league by season (Free tier limited to 200 events)
     fun eventsSeason(idLeague: String?, season: String?, sportResultCallback: SportResultCallback<Events>)
 
-# Android Library Version (build.gradle)
-- ext.kotlin_version = '1.3.70'
-- classpath 'com.android.tools.build:gradle:3.6.1'
-- compileSdkVersion 29
-- buildToolsVersion "29.0.3"
-- minSdkVersion 21
 
-# Colaborator
+## Colaborator
 Very open to anyone, I'll write your name under this, please contribute by sending an email to me
 
 - Mail To faisalamircs@gmail.com
@@ -189,7 +187,7 @@ Name Of Contribute
 
 Waiting for your contribute
 
-# Attention !!!
+## Attention !!!
 Please enjoy and don't forget fork and give a star
 - Don't Forget Follow My Github Account
 - If you like this library, please help me / you can donate to buy patreon services
