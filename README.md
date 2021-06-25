@@ -11,14 +11,12 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 ## Version Release
 This Is Latest Release
 
-    $version_release = 1.1.0
+    $version_release = 1.1.1
 
 What's New??
 
-    * Update build.gradle *
-    * Fixing Bug *
+    * Update Build Gradle *
     * Enhance Performance *
-    * Remove Kotlin Android Extension *
 
 ## How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -37,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
 
 	dependencies {
 	        // library consumable code the sport db api
-            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.1.0'
+            implementation 'com.github.amirisback:consumable-code-the-sport-db-api:1.1.1'
 	}
 	
 <h3>Step 3. Declaration ConsumeTheSportDbApi</h3>
